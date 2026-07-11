@@ -1,1 +1,298 @@
+/* ==========================================
+   ALEXANDRE SALÃO - VERSÃO PREMIUM
+========================================== */
 
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050505;
+    color:#ffffff;
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+}
+
+/* CORES */
+
+:root{
+    --preto:#050505;
+    --preto-claro:#111111;
+    --dourado:#D4AF37;
+    --dourado-claro:#F4D35E;
+    --branco:#ffffff;
+}
+
+/* CABEÇALHO */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:90px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 8%;
+
+    background:rgba(0,0,0,.80);
+
+    backdrop-filter:blur(10px);
+
+    border-bottom:1px solid rgba(212,175,55,.20);
+
+    z-index:1000;
+}
+
+/* LOGO */
+
+.logo{
+    font-family:'Cinzel',serif;
+    font-size:30px;
+    color:var(--dourado);
+    letter-spacing:3px;
+    font-weight:700;
+}
+
+/* MENU */
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:35px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    transition:.3s;
+    font-weight:500;
+}
+
+nav ul li a:hover{
+    color:var(--dourado);
+}
+
+/* BOTÃO */
+
+.btn-whatsapp{
+
+    text-decoration:none;
+
+    background:var(--dourado);
+
+    color:black;
+
+    padding:15px 30px;
+
+    border-radius:40px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.btn-whatsapp:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 0 20px var(--dourado);
+
+}
+
+/* HERO */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:140px 8%;
+
+    background:
+    radial-gradient(circle at top,#202020,#050505);
+
+}
+
+/* TEXTO */
+
+.hero-texto{
+
+    width:50%;
+
+}
+
+.hero-texto h4{
+
+    color:var(--dourado);
+
+    letter-spacing:5px;
+
+    margin-bottom:20px;
+
+}
+
+.hero-texto h1{
+
+    font-family:'Cinzel',serif;
+
+    font-size:70px;
+
+    line-height:75px;
+
+    margin-bottom:30px;
+
+}
+
+.hero-texto p{
+
+    font-size:20px;
+
+    line-height:34px;
+
+    color:#d9d9d9;
+
+    margin-bottom:40px;
+
+}
+
+/* BOTÕES */
+
+.botoes{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.botoes a{
+
+    text-decoration:none;
+
+    padding:18px 35px;
+
+    border-radius:40px;
+
+    transition:.3s;
+
+    font-weight:600;
+
+}
+
+.botoes a:first-child{
+
+    background:var(--dourado);
+
+    color:black;
+
+}
+
+.botoes a:last-child{
+
+    border:1px solid var(--dourado);
+
+    color:white;
+
+}
+
+.botoes a:hover{
+
+    transform:translateY(-5px);
+
+}
+
+/* FOTO */
+
+.hero-imagem{
+
+    width:45%;
+
+    text-align:center;
+
+}
+
+.hero-imagem img{
+
+    width:100%;
+
+    max-width:520px;
+
+    border-radius:20px;
+
+    box-shadow:0 0 40px rgba(212,175,55,.20);
+
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+header{
+
+padding:20px;
+
+}
+
+nav{
+
+display:none;
+
+}
+
+.hero{
+
+flex-direction:column;
+
+text-align:center;
+
+padding-top:120px;
+
+}
+
+.hero-texto{
+
+width:100%;
+
+}
+
+.hero-imagem{
+
+width:100%;
+
+margin-top:50px;
+
+}
+
+.hero-texto h1{
+
+font-size:45px;
+
+line-height:52px;
+
+}
+
+.botoes{
+
+flex-direction:column;
+
+}
+
+}
