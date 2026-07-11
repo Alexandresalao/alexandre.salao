@@ -249,7 +249,25 @@ header{
 
 padding:20px;
 
+.sobre{
+
+flex-direction:column;
+
+text-align:center;
+
 }
+
+.sobre-imagem{
+
+width:100%;
+
+}
+
+.sobre-texto{
+
+width:100%;
+
+}}
 
 nav{
 
@@ -295,4 +313,94 @@ flex-direction:column;
 
 }
 
+/* ============================
+        SOBRE
+============================ */
+
+.sobre{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:80px;
+
+    padding:120px 8%;
+
+    background:#0b0b0b;
+
 }
+
+.sobre-imagem{
+
+    width:45%;
+
+    text-align:center;
+
+}
+
+.sobre-imagem img{
+
+    width:100%;
+
+    max-width:500px;
+
+    border-radius:20px;
+
+    box-shadow:0 0 35px rgba(212,175,55,.25);
+
+}
+
+.sobre-texto{
+
+    width:55%;
+
+}
+
+.sobre-texto h5{
+
+    color:#D4AF37;
+
+    letter-spacing:6px;
+
+    margin-bottom:15px;
+
+}
+
+.sobre-texto h2{
+
+    font-family:'Cinzel',serif;
+
+    font-size:50px;
+
+    margin-bottom:25px;
+
+}
+
+.sobre-texto p{
+
+    color:#d8d8d8;
+
+    line-height:34px;
+
+    margin-bottom:35px;
+
+    font-size:18px;
+
+}
+
+.sobre-texto ul{
+
+    list-style:none;
+
+}
+
+.sobre-texto li{
+
+    margin-bottom:15px;
+
+    font-size:18px;
+
+}}
