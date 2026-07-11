@@ -267,7 +267,7 @@ width:100%;
 
 width:100%;
 
-}}
+}
 
 nav{
 
@@ -403,4 +403,90 @@ flex-direction:column;
 
     font-size:18px;
 
-}}
+}
+
+/* ===========================
+        SERVIÇOS
+=========================== */
+
+.servicos{
+
+    padding:120px 8%;
+
+    background:#050505;
+
+}
+
+.servicos h5{
+
+    color:#D4AF37;
+
+    text-align:center;
+
+    letter-spacing:5px;
+
+    margin-bottom:15px;
+
+}
+
+.servicos h2{
+
+    text-align:center;
+
+    font-size:50px;
+
+    font-family:'Cinzel',serif;
+
+    margin-bottom:70px;
+
+}
+
+.cards-servicos{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.card{
+
+    background:#111111;
+
+    border:1px solid rgba(212,175,55,.20);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    transition:.4s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#D4AF37;
+
+    box-shadow:0 0 35px rgba(212,175,55,.20);
+
+}
+
+.card h3{
+
+    color:#D4AF37;
+
+    margin-bottom:20px;
+
+}
+
+.card p{
+
+    color:#d9d9d9;
+
+    line-height:28px;
+
+}
