@@ -501,6 +501,104 @@ nav ul li a:hover{
 
 }
 
+/* ===========================
+        DEPOIMENTOS
+=========================== */
+
+.depoimentos{
+
+    padding:120px 8%;
+
+    background:#050505;
+
+    text-align:center;
+
+}
+
+.depoimentos h5{
+
+    color:#D4AF37;
+
+    letter-spacing:5px;
+
+    margin-bottom:15px;
+
+}
+
+.depoimentos h2{
+
+    font-family:'Cinzel',serif;
+
+    font-size:50px;
+
+    margin-bottom:70px;
+
+}
+
+.cards-depoimentos{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.depoimento{
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(212,175,55,.20);
+
+    border-radius:20px;
+
+    padding:40px;
+
+    transition:.4s;
+
+    backdrop-filter:blur(10px);
+
+}
+
+.depoimento:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#D4AF37;
+
+    box-shadow:0 0 35px rgba(212,175,55,.20);
+
+}
+
+.estrelas{
+
+    color:#D4AF37;
+
+    font-size:24px;
+
+    margin-bottom:20px;
+
+}
+
+.depoimento p{
+
+    color:#d9d9d9;
+
+    line-height:30px;
+
+    margin-bottom:25px;
+
+}
+
+.depoimento h4{
+
+    color:#D4AF37;
+
+    font-size:18px;
+
+}
+
 /* RESPONSIVO */
 
 @media(max-width:900px){
@@ -556,7 +654,9 @@ nav ul li a:hover{
 
 .galeria{
     grid-template-columns:1fr;
-
+}
+.cards-depoimentos{
+    grid-template-columns:1fr;
 }
 
 }
