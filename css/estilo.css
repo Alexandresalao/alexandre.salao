@@ -419,6 +419,88 @@ nav ul li a:hover{
 
 }
 
+/* ===========================
+        PORTFÓLIO
+=========================== */
+
+.portfolio{
+
+    padding:120px 8%;
+
+    background:#0b0b0b;
+
+    text-align:center;
+
+}
+
+.portfolio h5{
+
+    color:#D4AF37;
+
+    letter-spacing:5px;
+
+    margin-bottom:15px;
+
+}
+
+.portfolio h2{
+
+    font-size:50px;
+
+    font-family:'Cinzel',serif;
+
+    margin-bottom:25px;
+
+}
+
+.portfolio-texto{
+
+    max-width:800px;
+
+    margin:0 auto 60px;
+
+    color:#d9d9d9;
+
+    line-height:30px;
+
+}
+
+.galeria{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+.foto{
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    border:1px solid rgba(212,175,55,.20);
+
+}
+
+.foto img{
+
+    width:100%;
+
+    display:block;
+
+    transition:.5s;
+
+}
+
+.foto:hover img{
+
+    transform:scale(1.08);
+
+}
+
 /* RESPONSIVO */
 
 @media(max-width:900px){
@@ -471,5 +553,10 @@ nav ul li a:hover{
     .cards-servicos{
         grid-template-columns:1fr;
     }
+
+.galeria{
+    grid-template-columns:1fr;
+
+}
 
 }
