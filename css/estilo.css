@@ -241,78 +241,6 @@ nav ul li a:hover{
 
 }
 
-/* RESPONSIVO */
-
-@media(max-width:900px){
-
-header{
-
-padding:20px;
-
-.sobre{
-
-flex-direction:column;
-
-text-align:center;
-
-}
-
-.sobre-imagem{
-
-width:100%;
-
-}
-
-.sobre-texto{
-
-width:100%;
-
-}
-
-nav{
-
-display:none;
-
-}
-
-.hero{
-
-flex-direction:column;
-
-text-align:center;
-
-padding-top:120px;
-
-}
-
-.hero-texto{
-
-width:100%;
-
-}
-
-.hero-imagem{
-
-width:100%;
-
-margin-top:50px;
-
-}
-
-.hero-texto h1{
-
-font-size:45px;
-
-line-height:52px;
-
-}
-
-.botoes{
-
-flex-direction:column;
-
-}
-
 /* ============================
         SOBRE
 ============================ */
@@ -488,5 +416,60 @@ flex-direction:column;
     color:#d9d9d9;
 
     line-height:28px;
+
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+    header{
+        padding:20px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding-top:120px;
+    }
+
+    .hero-texto{
+        width:100%;
+    }
+
+    .hero-imagem{
+        width:100%;
+        margin-top:50px;
+    }
+
+    .hero-texto h1{
+        font-size:45px;
+        line-height:52px;
+    }
+
+    .botoes{
+        flex-direction:column;
+    }
+
+    .sobre{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .sobre-imagem{
+        width:100%;
+    }
+
+    .sobre-texto{
+        width:100%;
+    }
+
+    .cards-servicos{
+        grid-template-columns:1fr;
+    }
 
 }
