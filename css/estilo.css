@@ -648,15 +648,11 @@ nav ul li a:hover{
         width:100%;
     }
 
-    .cards-servicos{
-        grid-template-columns:1fr;
-    }
-
-.galeria{
-    grid-template-columns:1fr;
-}
+  .cards-servicos,
+.galeria,
 .cards-depoimentos{
     grid-template-columns:1fr;
+
 }
 
 }
