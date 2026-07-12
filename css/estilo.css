@@ -849,6 +849,70 @@ nav ul li a:hover::after{
 
 }
 
+/* ===========================
+      VOLTAR AO TOPO
+=========================== */
+
+.voltar-topo{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:105px;
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:var(--dourado);
+
+    color:#000;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    font-size:22px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.30);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(20px);
+
+    transition:.35s;
+
+    z-index:9998;
+
+}
+
+.voltar-topo.ativo{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+.voltar-topo:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 25px rgba(212,175,55,.50);
+
+}
+
 }
 
 /* RESPONSIVO */
