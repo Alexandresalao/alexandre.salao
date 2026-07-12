@@ -85,6 +85,32 @@ nav ul li a:hover{
     color:var(--dourado);
 }
 
+nav ul li a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--dourado);
+
+    transition:.35s;
+
+}
+
+nav ul li a:hover::after{
+
+    width:100%;
+
+}
+
 /* BOTÃO */
 
 .btn-whatsapp{
