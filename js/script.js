@@ -67,3 +67,23 @@ const observerContador = new IntersectionObserver((entries)=>{
 });
 
 observerContador.observe(contador);
+
+/* ===========================
+      BOTÃO VOLTAR AO TOPO
+=========================== */
+
+const voltarTopo = document.querySelector(".voltar-topo");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 400){
+
+        voltarTopo.classList.add("ativo");
+
+    }else{
+
+        voltarTopo.classList.remove("ativo");
+
+    }
+
+});
