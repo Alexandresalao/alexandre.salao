@@ -127,20 +127,22 @@ nav ul li a:hover::after{
 
     font-weight:bold;
 
-    transition:.3s;
+    transition:.35s ease;
 
     text-align:center;
 
-}
+    display:inline-block;
 
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+}
 .btn-whatsapp:hover{
 
-    transform:translateY(-3px);
+    transform:translateY(-5px) scale(1.03);
 
-    box-shadow:0 0 20px var(--dourado);
+    box-shadow:0 15px 35px rgba(212,175,55,.45);
 
 }
-
 /* HERO */
 
 .hero{
@@ -220,12 +222,15 @@ nav ul li a:hover::after{
 
     border-radius:40px;
 
-    transition:.3s;
+    transition:.35s ease;
 
     font-weight:600;
 
-}
+    display:inline-block;
 
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+}
 .botoes a:first-child{
 
     background:var(--dourado);
@@ -244,10 +249,11 @@ nav ul li a:hover::after{
 
 .botoes a:hover{
 
-    transform:translateY(-5px);
+    transform:translateY(-6px) scale(1.03);
+
+    box-shadow:0 15px 35px rgba(212,175,55,.35);
 
 }
-
 /* FOTO */
 
 .hero-imagem{
@@ -720,6 +726,28 @@ nav ul li a:hover::after{
     border-top:1px solid rgba(255,255,255,.08);
 
     color:#999;
+
+}
+
+/* ===========================
+        ANIMAÇÕES
+=========================== */
+
+.animar{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:opacity .8s ease, transform .8s ease;
+
+}
+
+.animar.mostrar{
+
+    opacity:1;
+
+    transform:translateY(0);
 
 }
 
