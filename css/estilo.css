@@ -78,6 +78,7 @@ nav ul li a{
     color:white;
     transition:.3s;
     font-weight:500;
+    position:relative;
 }
 
 nav ul li a:hover{
@@ -101,6 +102,8 @@ nav ul li a:hover{
     font-weight:bold;
 
     transition:.3s;
+
+    text-align:center;
 
 }
 
@@ -235,6 +238,10 @@ nav ul li a:hover{
 
     max-width:520px;
 
+    display:block;
+
+    margin:auto;
+
     border-radius:20px;
 
     box-shadow:0 0 40px rgba(212,175,55,.20);
@@ -274,6 +281,10 @@ nav ul li a:hover{
     width:100%;
 
     max-width:500px;
+
+    display:block;
+   
+    margin:auto;
 
     border-radius:20px;
 
@@ -390,8 +401,14 @@ nav ul li a:hover{
     padding:35px;
 
     transition:.4s;
+   
+    min-height:260px;
 
-   min-height:260px;
+    display:flex;
+   
+    flex-direction:column;
+   
+    justify-content:center;
 
 }
 
