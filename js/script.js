@@ -25,3 +25,45 @@ const observer = new IntersectionObserver((entries) => {
 elementos.forEach((elemento)=>{
     observer.observe(elemento);
 });
+
+/* ===========================
+      CONTADOR DE EXPERIÊNCIA
+=========================== */
+
+const contador = document.getElementById("contador");
+
+let iniciouContador = false;
+
+const observerContador = new IntersectionObserver((entries)=>{
+
+    entries.forEach((entry)=>{
+
+        if(entry.isIntersecting && !iniciouContador){
+
+            iniciouContador = true;
+
+            let numero = 0;
+
+            const intervalo = setInterval(()=>{
+
+                numero++;
+
+                contador.textContent = numero;
+
+                if(numero >= 23){
+
+                    clearInterval(intervalo);
+
+                }
+
+            },80);
+
+        }
+
+    });
+
+},{
+    threshold:0.6
+});
+
+observerContador.observe(contador);
