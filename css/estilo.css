@@ -821,6 +821,34 @@ nav ul li a:hover::after{
 
     }
 
+   /* ===========================
+          ÍCONES
+=========================== */
+
+.card h3 i{
+
+    color:var(--dourado);
+
+    margin-right:10px;
+
+}
+
+.footer i{
+
+    color:var(--dourado);
+
+    width:22px;
+
+    margin-right:8px;
+
+}
+
+.whatsapp-fixo i{
+
+    font-size:34px;
+
+}
+
 }
 
 /* RESPONSIVO */
