@@ -674,6 +674,15 @@ nav ul li a:hover{
 
 }
 
+.footer a{
+    color:#d9d9d9;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.footer a:hover{
+    color:#D4AF37;
+}
 .footer-copy{
 
     text-align:center;
