@@ -12,6 +12,7 @@
 
 html{
     scroll-behavior:smooth;
+    scroll-padding-top:100px;
 }
 
 body{
@@ -25,8 +26,14 @@ body{
 }
 
 img{
+    max-width:100%;
     user-select:none;
     -webkit-user-drag:none;
+}
+
+::selection{
+    background:var(--dourado);
+    color:#000;
 }
 
 /* CORES */
@@ -46,7 +53,7 @@ header{
     top:0;
     left:0;
     width:100%;
-    height:90px;
+    height:100px;
 
     display:flex;
     justify-content:space-between;
@@ -739,8 +746,9 @@ nav ul li a:hover::after{
 }
 
 .footer a:hover{
-    color:#D4AF37;
+    color:var(--dourado);
 }
+
 .footer-copy{
 
     text-align:center;
@@ -941,6 +949,15 @@ nav ul li a:hover::after{
 
 }
 
+/* ===========================
+      ACESSIBILIDADE
+=========================== */
+
+a:focus-visible{
+    outline:2px solid var(--dourado);
+    outline-offset:5px;
+}
+
 /* RESPONSIVO */
 
 @media(max-width:900px){
@@ -1001,5 +1018,65 @@ nav ul li a:hover::after{
     grid-template-columns:1fr;
     text-align:center;
 }
+
+ .logo{
+        font-size:21px;
+        letter-spacing:2px;
+    }
+
+    .btn-whatsapp{
+        padding:12px 18px;
+        font-size:14px;
+    }
+
+    .hero{
+        padding-left:6%;
+        padding-right:6%;
+    }
+
+    .hero-texto h4{
+        font-size:13px;
+        line-height:22px;
+        letter-spacing:3px;
+    }
+
+    .hero-texto p{
+        font-size:17px;
+        line-height:29px;
+    }
+
+    .sobre,
+    .servicos,
+    .portfolio,
+    .depoimentos{
+        padding:90px 6%;
+    }
+
+    .sobre-texto h2,
+    .servicos h2,
+    .portfolio h2,
+    .depoimentos h2{
+        font-size:36px;
+        line-height:44px;
+    }
+
+    .card,
+    .depoimento{
+        padding:30px 24px;
+    }
+
+    .whatsapp-fixo{
+        right:18px;
+        bottom:18px;
+        width:58px;
+        height:58px;
+    }
+
+    .voltar-topo{
+        right:20px;
+        bottom:88px;
+        width:48px;
+        height:48px;
+    }
 
 }
