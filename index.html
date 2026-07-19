@@ -15,7 +15,17 @@
     <meta name="description"
           content="Alexandre Salão em Nova Iguaçu. Especialista em mechas, loiros, colorimetria, cortes femininos e masculinos, prótese capilar, podologia, manicure e pedicure.">
 
-    <!-- Fontes do Google -->
+    <meta name="theme-color" content="#050505">
+
+    <meta property="og:title"
+          content="Alexandre Salão | Beleza, Elegância e Transformação">
+
+    <meta property="og:description"
+          content="Há mais de 23 anos transformando cabelos com técnica, sofisticação e atendimento personalizado em Nova Iguaçu.">
+
+    <meta property="og:type"
+          content="website">
+
     <link rel="preconnect"
           href="https://fonts.googleapis.com">
 
@@ -26,11 +36,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
           rel="stylesheet">
 
-    <!-- Ícones Font Awesome -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-    <!-- Arquivo de estilos -->
     <link rel="stylesheet"
           href="css/estilo.css">
 
@@ -38,10 +46,14 @@
 
 <body>
 
-    <!-- ==================================================
-         CABEÇALHO PREMIUM
-         HEADER = CABEÇALHO
-    ================================================== -->
+    <div class="preloader"
+         aria-hidden="true">
+
+        <div class="preloader-marca">
+            AS
+        </div>
+
+    </div>
 
     <header class="cabecalho-premium">
 
@@ -58,8 +70,6 @@
             </span>
 
         </a>
-
-        <!-- Botão do menu para celular -->
 
         <button class="menu-toggle"
                 type="button"
@@ -78,41 +88,12 @@
 
             <ul>
 
-                <li>
-                    <a href="#inicio">
-                        Início
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#sobre">
-                        Sobre
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#servicos">
-                        Serviços
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#portfolio">
-                        Portfólio
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#depoimentos">
-                        Depoimentos
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#contato">
-                        Contato
-                    </a>
-                </li>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#contato">Contato</a></li>
 
             </ul>
 
@@ -129,30 +110,18 @@
 
     </header>
 
-
-    <!-- ==================================================
-         HERO CINEMATOGRÁFICO
-         HERO = PRIMEIRA TELA PRINCIPAL
-    ================================================== -->
-
     <main>
 
         <section class="hero"
                  id="inicio">
 
-            <!-- Imagem de fundo da primeira tela -->
-
             <div class="hero-imagem-fundo"
                  aria-hidden="true">
             </div>
 
-            <!-- Camada escura sobre a imagem -->
-
             <div class="hero-overlay"
                  aria-hidden="true">
             </div>
-
-            <!-- Efeito decorativo dourado -->
 
             <div class="hero-brilho"
                  aria-hidden="true">
@@ -272,11 +241,6 @@
 
         </section>
 
-
-        <!-- ==================================================
-             SEÇÃO SOBRE
-        ================================================== -->
-
         <section id="sobre"
                  class="sobre">
 
@@ -285,6 +249,14 @@
                 <img src="imagens/alexandre.png"
                      alt="Alexandre, profissional do Alexandre Salão"
                      loading="lazy">
+
+                <div class="sobre-selo"
+                     aria-hidden="true">
+
+                    <span>DESDE</span>
+                    <strong>2003</strong>
+
+                </div>
 
             </div>
 
@@ -315,85 +287,16 @@
 
                 <ul>
 
-                    <li>
-                        <i class="fa-solid fa-check"
-                           aria-hidden="true">
-                        </i>
-
-                        Especialista em Mechas
-                    </li>
-
-                    <li>
-                        <i class="fa-solid fa-check"
-                           aria-hidden="true">
-                        </i>
-
-                        Loiro Iluminado
-                    </li>
-
-                    <li>
-                        <i class="fa-solid fa-check"
-                           aria-hidden="true">
-                        </i>
-
-                        Moreno Iluminado
-                    </li>
-
-                    <li>
-                        <i class="fa-solid fa-check"
-                           aria-hidden="true">
-                        </i>
-
-                        Corte Feminino Moderno
-                    </li>
-
-                    <li>
-                        <i class="fa-solid fa-check"
-                           aria-hidden="true">
-                        </i>
-
-                        Corte Masculino
-                    </li>
-
-                    <li>
-                        <i class="fa-solid fa-check"
-                           aria-hidden="true">
-                        </i>
-
-                        Técnico em Descoloração
-                    </li>
-
-                    <li>
-                        <i class="fa-solid fa-check"
-                           aria-hidden="true">
-                        </i>
-
-                        Técnico em Coloração
-                    </li>
-
-                    <li>
-                        <i class="fa-solid fa-check"
-                           aria-hidden="true">
-                        </i>
-
-                        Prótese Capilar Feminina e Masculina
-                    </li>
-
-                    <li>
-                        <i class="fa-solid fa-check"
-                           aria-hidden="true">
-                        </i>
-
-                        Podologia
-                    </li>
-
-                    <li>
-                        <i class="fa-solid fa-check"
-                           aria-hidden="true">
-                        </i>
-
-                        Manicure e Pedicure
-                    </li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i>Especialista em Mechas</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i>Loiro Iluminado</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i>Moreno Iluminado</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i>Corte Feminino Moderno</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i>Corte Masculino</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i>Técnico em Descoloração</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i>Técnico em Coloração</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i>Prótese Capilar Feminina e Masculina</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i>Podologia</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i>Manicure e Pedicure</li>
 
                 </ul>
 
@@ -401,23 +304,14 @@
 
         </section>
 
-
-        <!-- ==================================================
-             SEÇÃO SERVIÇOS
-        ================================================== -->
-
         <section id="servicos"
                  class="servicos">
 
             <div class="titulo-secao">
 
-                <h5>
-                    NOSSAS ESPECIALIDADES
-                </h5>
+                <h5>NOSSAS ESPECIALIDADES</h5>
 
-                <h2>
-                    Serviços Premium
-                </h2>
+                <h2>Serviços Premium</h2>
 
                 <p>
                     Técnicas profissionais e atendimento personalizado
@@ -429,221 +323,84 @@
             <div class="cards-servicos">
 
                 <article class="card">
-
-                    <div class="card-icone">
-
-                        <i class="fa-solid fa-wand-magic-sparkles"
-                           aria-hidden="true">
-                        </i>
-
-                    </div>
-
-                    <h3>
-                        Mechas Loiro
-                    </h3>
-
-                    <p>
-                        Mechas modernas com iluminação sofisticada,
-                        equilíbrio de tons e acabamento premium.
-                    </p>
-
+                    <div class="card-icone"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>
+                    <span class="card-numero">01</span>
+                    <h3>Mechas Loiro</h3>
+                    <p>Mechas modernas com iluminação sofisticada, equilíbrio de tons e acabamento premium.</p>
                 </article>
 
                 <article class="card">
-
-                    <div class="card-icone">
-
-                        <i class="fa-solid fa-sun"
-                           aria-hidden="true">
-                        </i>
-
-                    </div>
-
-                    <h3>
-                        Loiro Iluminado
-                    </h3>
-
-                    <p>
-                        Clareamento elegante com luminosidade,
-                        naturalidade e cuidado com a fibra capilar.
-                    </p>
-
+                    <div class="card-icone"><i class="fa-solid fa-sun" aria-hidden="true"></i></div>
+                    <span class="card-numero">02</span>
+                    <h3>Loiro Iluminado</h3>
+                    <p>Clareamento elegante com luminosidade, naturalidade e cuidado com a fibra capilar.</p>
                 </article>
 
                 <article class="card">
-
-                    <div class="card-icone">
-
-                        <i class="fa-solid fa-palette"
-                           aria-hidden="true">
-                        </i>
-
-                    </div>
-
-                    <h3>
-                        Moreno Iluminado
-                    </h3>
-
-                    <p>
-                        Pontos de luz estratégicos para criar profundidade,
-                        movimento e elegância em cabelos escuros.
-                    </p>
-
+                    <div class="card-icone"><i class="fa-solid fa-palette" aria-hidden="true"></i></div>
+                    <span class="card-numero">03</span>
+                    <h3>Moreno Iluminado</h3>
+                    <p>Pontos de luz estratégicos para criar profundidade, movimento e elegância em cabelos escuros.</p>
                 </article>
 
                 <article class="card">
-
-                    <div class="card-icone">
-
-                        <i class="fa-solid fa-brush"
-                           aria-hidden="true">
-                        </i>
-
-                    </div>
-
-                    <h3>
-                        Colorimetria
-                    </h3>
-
-                    <p>
-                        Técnicas profissionais de coloração,
-                        neutralização de tons e correção de cor.
-                    </p>
-
+                    <div class="card-icone"><i class="fa-solid fa-brush" aria-hidden="true"></i></div>
+                    <span class="card-numero">04</span>
+                    <h3>Colorimetria</h3>
+                    <p>Técnicas profissionais de coloração, neutralização de tons e correção de cor.</p>
                 </article>
 
                 <article class="card">
-
-                    <div class="card-icone">
-
-                        <i class="fa-solid fa-scissors"
-                           aria-hidden="true">
-                        </i>
-
-                    </div>
-
-                    <h3>
-                        Corte Feminino
-                    </h3>
-
-                    <p>
-                        Cortes modernos e personalizados,
-                        do cabelo longo ao curto.
-                    </p>
-
+                    <div class="card-icone"><i class="fa-solid fa-scissors" aria-hidden="true"></i></div>
+                    <span class="card-numero">05</span>
+                    <h3>Corte Feminino</h3>
+                    <p>Cortes modernos e personalizados, do cabelo longo ao curto.</p>
                 </article>
 
                 <article class="card">
-
-                    <div class="card-icone">
-
-                        <i class="fa-solid fa-user"
-                           aria-hidden="true">
-                        </i>
-
-                    </div>
-
-                    <h3>
-                        Corte Masculino
-                    </h3>
-
-                    <p>
-                        Estilo, precisão e acabamento impecável
-                        para diferentes perfis masculinos.
-                    </p>
-
+                    <div class="card-icone"><i class="fa-solid fa-user" aria-hidden="true"></i></div>
+                    <span class="card-numero">06</span>
+                    <h3>Corte Masculino</h3>
+                    <p>Estilo, precisão e acabamento impecável para diferentes perfis masculinos.</p>
                 </article>
 
                 <article class="card">
-
-                    <div class="card-icone">
-
-                        <i class="fa-solid fa-user-plus"
-                           aria-hidden="true">
-                        </i>
-
-                    </div>
-
-                    <h3>
-                        Prótese Capilar
-                    </h3>
-
-                    <p>
-                        Soluções personalizadas para homens e mulheres,
-                        com naturalidade e segurança.
-                    </p>
-
+                    <div class="card-icone"><i class="fa-solid fa-user-plus" aria-hidden="true"></i></div>
+                    <span class="card-numero">07</span>
+                    <h3>Prótese Capilar</h3>
+                    <p>Soluções personalizadas para homens e mulheres, com naturalidade e segurança.</p>
                 </article>
 
                 <article class="card">
-
-                    <div class="card-icone">
-
-                        <i class="fa-solid fa-shoe-prints"
-                           aria-hidden="true">
-                        </i>
-
-                    </div>
-
-                    <h3>
-                        Podologia
-                    </h3>
-
-                    <p>
-                        Cuidados profissionais para promover saúde,
-                        conforto e bem-estar para os pés.
-                    </p>
-
+                    <div class="card-icone"><i class="fa-solid fa-shoe-prints" aria-hidden="true"></i></div>
+                    <span class="card-numero">08</span>
+                    <h3>Podologia</h3>
+                    <p>Cuidados profissionais para promover saúde, conforto e bem-estar para os pés.</p>
                 </article>
 
                 <article class="card">
-
-                    <div class="card-icone">
-
-                        <i class="fa-solid fa-hand-sparkles"
-                           aria-hidden="true">
-                        </i>
-
-                    </div>
-
-                    <h3>
-                        Manicure e Pedicure
-                    </h3>
-
-                    <p>
-                        Cuidados completos para mãos e pés,
-                        com higiene, beleza e acabamento profissional.
-                    </p>
-
+                    <div class="card-icone"><i class="fa-solid fa-hand-sparkles" aria-hidden="true"></i></div>
+                    <span class="card-numero">09</span>
+                    <h3>Manicure e Pedicure</h3>
+                    <p>Cuidados completos para mãos e pés, com higiene, beleza e acabamento profissional.</p>
                 </article>
 
             </div>
 
         </section>
 
-
-        <!-- ==================================================
-             SEÇÃO PORTFÓLIO
-        ================================================== -->
-
         <section id="portfolio"
                  class="portfolio">
 
             <div class="titulo-secao">
 
-                <h5>
-                    PORTFÓLIO
-                </h5>
+                <h5>PORTFÓLIO</h5>
 
-                <h2>
-                    Transformações Reais
-                </h2>
+                <h2>Transformações Reais</h2>
 
                 <p class="portfolio-texto">
-
                     Conheça alguns dos trabalhos realizados por Alexandre
                     ao longo de sua carreira.
-
                 </p>
 
             </div>
@@ -651,98 +408,47 @@
             <div class="galeria">
 
                 <figure class="foto">
-
-                    <img src="imagens/foto1.jpg"
-                         alt="Trabalho de mechas em cabelo loiro"
-                         loading="lazy">
-
-                    <figcaption>
-                        Mechas Loiro
-                    </figcaption>
-
+                    <img src="imagens/foto1.jpg" alt="Trabalho de mechas em cabelo loiro" loading="lazy">
+                    <figcaption><span>01</span><strong>Mechas Loiro</strong></figcaption>
                 </figure>
 
                 <figure class="foto">
-
-                    <img src="imagens/foto2.jpg"
-                         alt="Trabalho de moreno iluminado"
-                         loading="lazy">
-
-                    <figcaption>
-                        Moreno Iluminado
-                    </figcaption>
-
+                    <img src="imagens/foto2.jpg" alt="Trabalho de moreno iluminado" loading="lazy">
+                    <figcaption><span>02</span><strong>Moreno Iluminado</strong></figcaption>
                 </figure>
 
                 <figure class="foto">
-
-                    <img src="imagens/foto3.jpg"
-                         alt="Trabalho profissional de colorimetria"
-                         loading="lazy">
-
-                    <figcaption>
-                        Colorimetria
-                    </figcaption>
-
+                    <img src="imagens/foto3.jpg" alt="Trabalho profissional de colorimetria" loading="lazy">
+                    <figcaption><span>03</span><strong>Colorimetria</strong></figcaption>
                 </figure>
 
                 <figure class="foto">
-
-                    <img src="imagens/foto4.jpg"
-                         alt="Corte feminino moderno"
-                         loading="lazy">
-
-                    <figcaption>
-                        Corte Feminino
-                    </figcaption>
-
+                    <img src="imagens/foto4.jpg" alt="Corte feminino moderno" loading="lazy">
+                    <figcaption><span>04</span><strong>Corte Feminino</strong></figcaption>
                 </figure>
 
                 <figure class="foto">
-
-                    <img src="imagens/foto5.jpg"
-                         alt="Aplicação de prótese capilar"
-                         loading="lazy">
-
-                    <figcaption>
-                        Prótese Capilar
-                    </figcaption>
-
+                    <img src="imagens/foto5.jpg" alt="Aplicação de prótese capilar" loading="lazy">
+                    <figcaption><span>05</span><strong>Prótese Capilar</strong></figcaption>
                 </figure>
 
                 <figure class="foto">
-
-                    <img src="imagens/foto6.jpg"
-                         alt="Transformação capilar completa"
-                         loading="lazy">
-
-                    <figcaption>
-                        Transformação Capilar
-                    </figcaption>
-
+                    <img src="imagens/foto6.jpg" alt="Transformação capilar completa" loading="lazy">
+                    <figcaption><span>06</span><strong>Transformação Capilar</strong></figcaption>
                 </figure>
 
             </div>
 
         </section>
 
-
-        <!-- ==================================================
-             SEÇÃO DEPOIMENTOS
-        ================================================== -->
-
         <section id="depoimentos"
                  class="depoimentos">
 
             <div class="titulo-secao">
 
-                <h5>
-                    AVALIAÇÕES
-                </h5>
+                <h5>AVALIAÇÕES</h5>
 
-                <h2>
-                    O que nossos clientes dizem
-                </h2>
+                <h2>O que nossos clientes dizem</h2>
 
                 <p>
                     Experiências marcadas por atendimento personalizado,
@@ -754,134 +460,47 @@
             <div class="cards-depoimentos">
 
                 <article class="depoimento">
-
-                    <div class="estrelas"
-                         aria-label="Avaliação de cinco estrelas">
-
-                        <i class="fa-solid fa-star"
-                           aria-hidden="true">
-                        </i>
-
-                        <i class="fa-solid fa-star"
-                           aria-hidden="true">
-                        </i>
-
-                        <i class="fa-solid fa-star"
-                           aria-hidden="true">
-                        </i>
-
-                        <i class="fa-solid fa-star"
-                           aria-hidden="true">
-                        </i>
-
-                        <i class="fa-solid fa-star"
-                           aria-hidden="true">
-                        </i>
-
+                    <div class="aspas" aria-hidden="true">“</div>
+                    <div class="estrelas" aria-label="Avaliação de cinco estrelas">
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
                     </div>
-
-                    <p>
-
-                        “Atendimento impecável! O Alexandre superou
-                        minhas expectativas. Meu cabelo ficou exatamente
-                        como eu sonhava.”
-
-                    </p>
-
-                    <h4>
-                        Mariana Souza
-                    </h4>
-
+                    <p>“Atendimento impecável! O Alexandre superou minhas expectativas. Meu cabelo ficou exatamente como eu sonhava.”</p>
+                    <h4>Mariana Souza</h4>
                 </article>
 
                 <article class="depoimento">
-
-                    <div class="estrelas"
-                         aria-label="Avaliação de cinco estrelas">
-
-                        <i class="fa-solid fa-star"
-                           aria-hidden="true">
-                        </i>
-
-                        <i class="fa-solid fa-star"
-                           aria-hidden="true">
-                        </i>
-
-                        <i class="fa-solid fa-star"
-                           aria-hidden="true">
-                        </i>
-
-                        <i class="fa-solid fa-star"
-                           aria-hidden="true">
-                        </i>
-
-                        <i class="fa-solid fa-star"
-                           aria-hidden="true">
-                        </i>
-
+                    <div class="aspas" aria-hidden="true">“</div>
+                    <div class="estrelas" aria-label="Avaliação de cinco estrelas">
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
                     </div>
-
-                    <p>
-
-                        “Profissional extremamente qualificado.
-                        Ambiente agradável e resultado incrível.”
-
-                    </p>
-
-                    <h4>
-                        Fernanda Oliveira
-                    </h4>
-
+                    <p>“Profissional extremamente qualificado. Ambiente agradável e resultado incrível.”</p>
+                    <h4>Fernanda Oliveira</h4>
                 </article>
 
                 <article class="depoimento">
-
-                    <div class="estrelas"
-                         aria-label="Avaliação de cinco estrelas">
-
-                        <i class="fa-solid fa-star"
-                           aria-hidden="true">
-                        </i>
-
-                        <i class="fa-solid fa-star"
-                           aria-hidden="true">
-                        </i>
-
-                        <i class="fa-solid fa-star"
-                           aria-hidden="true">
-                        </i>
-
-                        <i class="fa-solid fa-star"
-                           aria-hidden="true">
-                        </i>
-
-                        <i class="fa-solid fa-star"
-                           aria-hidden="true">
-                        </i>
-
+                    <div class="aspas" aria-hidden="true">“</div>
+                    <div class="estrelas" aria-label="Avaliação de cinco estrelas">
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
                     </div>
-
-                    <p>
-
-                        “Melhor especialista em loiros da região.
-                        Recomendo de olhos fechados.”
-
-                    </p>
-
-                    <h4>
-                        Juliana Martins
-                    </h4>
-
+                    <p>“Melhor especialista em loiros da região. Recomendo de olhos fechados.”</p>
+                    <h4>Juliana Martins</h4>
                 </article>
 
             </div>
 
         </section>
-
-
-        <!-- ==================================================
-             CHAMADA PARA AGENDAMENTO
-        ================================================== -->
 
         <section class="chamada-agendamento">
 
@@ -891,13 +510,9 @@
 
             <div class="chamada-conteudo">
 
-                <span>
-                    SUA TRANSFORMAÇÃO COMEÇA AQUI
-                </span>
+                <span>SUA TRANSFORMAÇÃO COMEÇA AQUI</span>
 
-                <h2>
-                    Descubra uma nova versão da sua beleza
-                </h2>
+                <h2>Descubra uma nova versão da sua beleza</h2>
 
                 <p>
                     Agende seu atendimento e receba uma avaliação
@@ -908,10 +523,7 @@
                    target="_blank"
                    rel="noopener noreferrer">
 
-                    <i class="fa-brands fa-whatsapp"
-                       aria-hidden="true">
-                    </i>
-
+                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                     Agendar pelo WhatsApp
 
                 </a>
@@ -922,12 +534,6 @@
 
     </main>
 
-
-    <!-- ==================================================
-         RODAPÉ
-         FOOTER = RODAPÉ
-    ================================================== -->
-
     <footer class="footer"
             id="contato">
 
@@ -935,9 +541,7 @@
 
             <div class="footer-logo">
 
-                <h2>
-                    ALEXANDRE SALÃO
-                </h2>
+                <h2>ALEXANDRE SALÃO</h2>
 
                 <p>
                     Especialista em mechas, loiros, colorimetria
@@ -951,9 +555,7 @@
                        rel="noopener noreferrer"
                        aria-label="WhatsApp do Alexandre Salão">
 
-                        <i class="fa-brands fa-whatsapp"
-                           aria-hidden="true">
-                        </i>
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
 
                     </a>
 
@@ -963,95 +565,48 @@
 
             <div class="footer-info">
 
-                <h3>
-                    Contato
-                </h3>
+                <h3>Contato</h3>
 
                 <p>
-
-                    <i class="fa-solid fa-phone"
-                       aria-hidden="true">
-                    </i>
-
-                    <a href="tel:+5521992789166">
-                        (21) 99278-9166
-                    </a>
-
+                    <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                    <a href="tel:+5521992789166">(21) 99278-9166</a>
                 </p>
 
                 <p>
-
-                    <i class="fa-solid fa-location-dot"
-                       aria-hidden="true">
-                    </i>
-
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                     Nova Iguaçu - Rio de Janeiro
-
                 </p>
 
                 <p>
-
-                    <i class="fa-solid fa-envelope"
-                       aria-hidden="true">
-                    </i>
-
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                     <a href="mailto:alexandresouzadasilva1985@gmail.com">
                         alexandresouzadasilva1985@gmail.com
                     </a>
-
                 </p>
 
             </div>
 
             <div class="footer-horario">
 
-                <h3>
-                    Horário de atendimento
-                </h3>
+                <h3>Horário de atendimento</h3>
 
-                <p>
-                    Segunda a sexta-feira
-                </p>
+                <p>Segunda a sexta-feira</p>
+                <strong>09h às 19h</strong>
 
-                <strong>
-                    09h às 19h
-                </strong>
-
-                <p>
-                    Sábado
-                </p>
-
-                <strong>
-                    09h às 18h
-                </strong>
+                <p>Sábado</p>
+                <strong>09h às 18h</strong>
 
             </div>
 
             <div class="footer-links">
 
-                <h3>
-                    Navegação
-                </h3>
+                <h3>Navegação</h3>
 
-                <a href="#inicio">
-                    Início
-                </a>
-
-                <a href="#sobre">
-                    Sobre
-                </a>
-
-                <a href="#servicos">
-                    Serviços
-                </a>
-
-                <a href="#portfolio">
-                    Portfólio
-                </a>
-
-                <a href="#depoimentos">
-                    Depoimentos
-                </a>
+                <a href="#inicio">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#portfolio">Portfólio</a>
+                <a href="#depoimentos">Depoimentos</a>
 
             </div>
 
@@ -1059,16 +614,11 @@
 
         <div class="footer-copy">
 
-            <p>
-                © 2026 Alexandre Salão. Todos os direitos reservados.
-            </p>
+            <p>© <span id="ano-atual">2026</span> Alexandre Salão. Todos os direitos reservados.</p>
 
         </div>
 
     </footer>
-
-
-    <!-- Botão fixo do WhatsApp -->
 
     <a href="https://wa.me/5521992789166"
        class="whatsapp-fixo"
@@ -1076,27 +626,17 @@
        rel="noopener noreferrer"
        aria-label="Fale conosco pelo WhatsApp">
 
-        <i class="fa-brands fa-whatsapp"
-           aria-hidden="true">
-        </i>
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
 
     </a>
-
-
-    <!-- Botão para voltar ao topo -->
 
     <a href="#inicio"
        class="voltar-topo"
        aria-label="Voltar ao topo">
 
-        <i class="fa-solid fa-chevron-up"
-           aria-hidden="true">
-        </i>
+        <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
 
     </a>
-
-
-    <!-- Arquivo JavaScript -->
 
     <script src="js/script.js"></script>
 
