@@ -19,6 +19,14 @@ body{
     color:#ffffff;
     font-family:'Poppins',sans-serif;
     overflow-x:hidden;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img{
+    user-select:none;
+    -webkit-user-drag:none;
 }
 
 /* CORES */
@@ -278,6 +286,16 @@ nav ul li a:hover::after{
 
     box-shadow:0 0 40px rgba(212,175,55,.20);
 
+    transition:.6s ease;
+
+}
+
+.hero-imagem img:hover{
+
+    transform:scale(1.03);
+
+    box-shadow:0 0 60px rgba(212,175,55,.35);
+
 }
 
 /* ============================
@@ -536,6 +554,8 @@ nav ul li a:hover::after{
 
     aspect-ratio:1/1;
 
+    transition:.4s ease;
+
 }
 
 .foto img{
@@ -548,13 +568,19 @@ nav ul li a:hover::after{
 
     display:block;
 
-    transition:.5s;
+    transition:.6s ease;
 
 }
 
 .foto:hover img{
 
-    transform:scale(1.08);
+    transform:scale(1.08) rotate(.5deg);
+
+}
+
+.foto:hover{
+
+    box-shadow:0 0 35px rgba(212,175,55,.25);
 
 }
 
@@ -821,6 +847,8 @@ nav ul li a:hover::after{
 
     }
 
+}
+
    /* ===========================
           ÍCONES
 =========================== */
@@ -910,8 +938,6 @@ nav ul li a:hover::after{
     transform:scale(1.08);
 
     box-shadow:0 0 25px rgba(212,175,55,.50);
-
-}
 
 }
 
