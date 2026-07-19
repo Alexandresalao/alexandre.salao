@@ -93,3 +93,35 @@ if (voltarTopo) {
         }
     );
 }
+
+/* ===========================
+      MENU HAMBÚRGUER
+=========================== */
+
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector("header nav");
+const menuLinks = document.querySelectorAll("header nav a");
+
+if (menuToggle && nav) {
+
+    menuToggle.addEventListener("click", () => {
+
+        menuToggle.classList.toggle("ativo");
+        nav.classList.toggle("ativo");
+        document.body.classList.toggle("menu-aberto");
+
+    });
+
+    menuLinks.forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            menuToggle.classList.remove("ativo");
+            nav.classList.remove("ativo");
+            document.body.classList.remove("menu-aberto");
+
+        });
+
+    });
+
+}
