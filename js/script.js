@@ -1,3 +1,7 @@
+/* ===========================
+      ANIMAÇÃO AO ROLAR
+=========================== */
+
 const elementos = document.querySelectorAll(
     ".hero, .sobre, .servicos, .portfolio, .depoimentos, .footer"
 );
@@ -6,25 +10,26 @@ elementos.forEach((elemento) => {
     elemento.classList.add("animar");
 });
 
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver(
+    (entries, observador) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("mostrar");
 
-    entries.forEach((entry) => {
+                // Para de observar depois que a animação acontece
+                observador.unobserve(entry.target);
+            }
+        });
+    },
+    {
+        threshold: 0.2
+    }
+);
 
-        if(entry.isIntersecting){
-
-            entry.target.classList.add("mostrar");
-
-        }
-
-    });
-
-},{
-    threshold:0.2
-});
-
-elementos.forEach((elemento)=>{
+elementos.forEach((elemento) => {
     observer.observe(elemento);
 });
+
 
 /* ===========================
       CONTADOR DE EXPERIÊNCIA
@@ -32,41 +37,40 @@ elementos.forEach((elemento)=>{
 
 const contador = document.getElementById("contador");
 
-let iniciouContador = false;
+if (contador) {
+    const numeroFinal = 23;
+    let iniciouContador = false;
 
-const observerContador = new IntersectionObserver((entries)=>{
+    const observerContador = new IntersectionObserver(
+        (entries, observador) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting && !iniciouContador) {
+                    iniciouContador = true;
 
-    entries.forEach((entry)=>{
+                    let numero = 0;
 
-        if(entry.isIntersecting && !iniciouContador){
+                    const intervalo = setInterval(() => {
+                        numero++;
+                        contador.textContent = numero;
 
-            iniciouContador = true;
+                        if (numero >= numeroFinal) {
+                            clearInterval(intervalo);
+                        }
+                    }, 80);
 
-            let numero = 0;
-
-            const intervalo = setInterval(()=>{
-
-                numero++;
-
-                contador.textContent = numero;
-
-                if(numero >= 23){
-
-                    clearInterval(intervalo);
-
+                    // O contador só precisa ser observado uma vez
+                    observador.unobserve(entry.target);
                 }
-
-            },80);
-
+            });
+        },
+        {
+            threshold: 0.6
         }
+    );
 
-    });
+    observerContador.observe(contador);
+}
 
-},{
-    threshold:0.6
-});
-
-observerContador.observe(contador);
 
 /* ===========================
       BOTÃO VOLTAR AO TOPO
@@ -74,16 +78,18 @@ observerContador.observe(contador);
 
 const voltarTopo = document.querySelector(".voltar-topo");
 
-window.addEventListener("scroll", () => {
-
-    if(window.scrollY > 400){
-
-        voltarTopo.classList.add("ativo");
-
-    }else{
-
-        voltarTopo.classList.remove("ativo");
-
-    }
-
-});
+if (voltarTopo) {
+    window.addEventListener(
+        "scroll",
+        () => {
+            if (window.scrollY > 400) {
+                voltarTopo.classList.add("ativo");
+            } else {
+                voltarTopo.classList.remove("ativo");
+            }
+        },
+        {
+            passive: true
+        }
+    );
+}
