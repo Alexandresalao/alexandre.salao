@@ -1,347 +1,388 @@
 document.addEventListener("DOMContentLoaded", () => {
+
     "use strict";
 
     const body = document.body;
-    const cabecalho = document.querySelector(".cabecalho-premium");
-    const botaoMenu = document.querySelector(".menu-toggle");
+
+    const header = document.querySelector(".cabecalho-premium");
+
+    const toggle = document.querySelector(".menu-toggle");
+
     const menu = document.querySelector("#menu-principal");
-    const linksMenu = document.querySelectorAll("#menu-principal a");
-    const voltarTopo = document.querySelector(".voltar-topo");
+
+    const links = document.querySelectorAll("#menu-principal a");
+
+    const topo = document.querySelector(".voltar-topo");
+
     const contador = document.querySelector("#contador");
-    const anoAtual = document.querySelector("#ano-atual");
+
+    const ano = document.querySelector("#ano-atual");
+
     const preloader = document.querySelector(".preloader");
 
-    // Atualiza o ano automaticamente
-    if (anoAtual) {
-        anoAtual.textContent = new Date().getFullYear();
+
+    /* ==========================================
+       ANO AUTOMÁTICO NO RODAPÉ
+    ========================================== */
+
+    if (ano) {
+        ano.textContent = new Date().getFullYear();
     }
 
-    // ---------------- MENU MOBILE ----------------
 
-    function fecharMenu() {
-        if (!botaoMenu || !menu) return;
+    /* ==========================================
+       MENU PARA CELULAR
+    ========================================== */
 
-        botaoMenu.classList.remove("ativo");
+    const fecharMenu = () => {
+
+        if (!toggle || !menu) {
+            return;
+        }
+
+        toggle.classList.remove("ativo");
+
         menu.classList.remove("aberto");
-        botaoMenu.setAttribute("aria-expanded", "false");
+
+        toggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
         body.classList.remove("menu-aberto");
+
+    };
+
+
+    if (toggle && menu) {
+
+        toggle.addEventListener("click", () => {
+
+            const aberto =
+                menu.classList.toggle("aberto");
+
+            toggle.classList.toggle(
+                "ativo",
+                aberto
+            );
+
+            toggle.setAttribute(
+                "aria-expanded",
+                aberto ? "true" : "false"
+            );
+
+            body.classList.toggle(
+                "menu-aberto",
+                aberto
+            );
+
+        });
+
+
+        links.forEach((link) => {
+
+            link.addEventListener(
+                "click",
+                fecharMenu
+            );
+
+        });
+
+
+        document.addEventListener(
+            "keydown",
+            (evento) => {
+
+                if (evento.key === "Escape") {
+                    fecharMenu();
+                }
+
+            }
+        );
+
     }
 
-    function abrirMenu() {
-        if (!botaoMenu || !menu) return;
 
-        botaoMenu.classList.add("ativo");
-        menu.classList.add("aberto");
-        botaoMenu.setAttribute("aria-expanded", "true");
-        body.classList.add("menu-aberto");
-    }
+    /* ==========================================
+       CABEÇALHO E BOTÃO VOLTAR AO TOPO
+    ========================================== */
 
-    if (botaoMenu && menu) {
+    const controlarRolagem = () => {
 
-        botaoMenu.addEventListener("click", () => {
+        if (header) {
 
-            if (menu.classList.contains("aberto")) {
-                fecharMenu();
-            } else {
-                abrirMenu();
-            }
-
-        });
-
-        linksMenu.forEach(link => {
-
-            link.addEventListener("click", fecharMenu);
-
-        });
-
-        document.addEventListener("keydown", (e) => {
-
-            if (e.key === "Escape") {
-                fecharMenu();
-            }
-
-        });
-
-        window.addEventListener("resize", () => {
-
-            if (window.innerWidth > 900) {
-                fecharMenu();
-            }
-
-        });
-
-    }
-
-    // ---------------- HEADER ----------------
-
-    function atualizarHeader() {
-
-        if (!cabecalho) return;
-
-        if (window.scrollY > 30) {
-
-            cabecalho.classList.add("rolado");
-
-        } else {
-
-            cabecalho.classList.remove("rolado");
+            header.classList.toggle(
+                "rolado",
+                window.scrollY > 30
+            );
 
         }
 
-        if (voltarTopo) {
 
-            if (window.scrollY > 500) {
+        if (topo) {
 
-                voltarTopo.classList.add("visivel");
-
-            } else {
-
-                voltarTopo.classList.remove("visivel");
-
-            }
+            topo.classList.toggle(
+                "visivel",
+                window.scrollY > 500
+            );
 
         }
 
-    }
+    };
 
-    atualizarHeader();
 
-    window.addEventListener("scroll", atualizarHeader);
+    controlarRolagem();
 
-    // ---------------- ANIMAÇÕES ----------------
 
-    const elementos = document.querySelectorAll(
-
-        ".sobre-imagem, .sobre-texto, .titulo-secao, .card, .foto, .depoimento, .chamada-conteudo"
-
+    window.addEventListener(
+        "scroll",
+        controlarRolagem,
+        {
+            passive: true
+        }
     );
 
-    elementos.forEach(el => {
 
-        el.classList.add("animar");
+    /* ==========================================
+       ANIMAÇÕES AO ROLAR A PÁGINA
+    ========================================== */
+
+    const itensAnimados =
+        document.querySelectorAll(
+            ".sobre-imagem, " +
+            ".sobre-texto, " +
+            ".titulo-secao, " +
+            ".card-servico-foto, " +
+            ".foto, " +
+            ".comparacao, " +
+            ".video-card, " +
+            ".depoimento, " +
+            ".chamada-conteudo"
+        );
+
+
+    itensAnimados.forEach((item) => {
+
+        item.classList.add("animar");
 
     });
 
+
     if ("IntersectionObserver" in window) {
 
-        const observer = new IntersectionObserver((entries, obs) => {
+        const observador =
+            new IntersectionObserver(
+                (entradas, observer) => {
 
-            entries.forEach(entry => {
+                    entradas.forEach(
+                        (entrada) => {
 
-                if (entry.isIntersecting) {
+                            if (
+                                entrada.isIntersecting
+                            ) {
 
-                    entry.target.classList.add("visivel");
+                                entrada.target
+                                    .classList
+                                    .add("visivel");
 
-                    obs.unobserve(entry.target);
+                                observer.unobserve(
+                                    entrada.target
+                                );
 
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.12
                 }
+            );
 
-            });
 
-        }, {
+        itensAnimados.forEach((item) => {
 
-            threshold: 0.15
-
-        });
-
-        elementos.forEach(el => {
-
-            observer.observe(el);
+            observador.observe(item);
 
         });
 
     } else {
 
-        elementos.forEach(el => {
+        itensAnimados.forEach((item) => {
 
-            el.classList.add("visivel");
+            item.classList.add("visivel");
 
         });
 
     }
 
-    // ---------------- CONTADOR ----------------
+
+    /* ==========================================
+       CONTADOR DOS 23 ANOS
+    ========================================== */
 
     if (contador) {
 
-        let iniciado = false;
+        let contadorExecutado = false;
 
-        function animarContador() {
 
-            if (iniciado) return;
+        const iniciarContador = () => {
 
-            iniciado = true;
-
-            const total = 23;
-
-            const tempo = 1500;
-
-            const inicio = performance.now();
-
-            function atualizar(now) {
-
-                const progresso = Math.min(
-
-                    (now - inicio) / tempo,
-
-                    1
-
-                );
-
-                const valor = Math.floor(
-
-                    progresso * total
-
-                );
-
-                contador.textContent = valor;
-
-                if (progresso < 1) {
-
-                    requestAnimationFrame(atualizar);
-
-                } else {
-
-                    contador.textContent = total;
-
-                }
-
+            if (contadorExecutado) {
+                return;
             }
 
-            requestAnimationFrame(atualizar);
+            contadorExecutado = true;
 
-        }
+            let numero = 0;
 
-        if ("IntersectionObserver" in window) {
 
-            const contadorObserver = new IntersectionObserver((entries, obs) => {
+            const intervalo =
+                setInterval(() => {
 
-                entries.forEach(entry => {
+                    numero++;
 
-                    if (entry.isIntersecting) {
+                    contador.textContent =
+                        numero;
 
-                        animarContador();
 
-                        obs.disconnect();
+                    if (numero >= 23) {
+
+                        clearInterval(
+                            intervalo
+                        );
 
                     }
 
-                });
+                }, 55);
 
-            }, {
+        };
 
-                threshold: 0.5
 
-            });
+        if (
+            "IntersectionObserver" in window
+        ) {
 
-            contadorObserver.observe(contador);
+            const observadorContador =
+                new IntersectionObserver(
+                    (entradas, observer) => {
+
+                        entradas.forEach(
+                            (entrada) => {
+
+                                if (
+                                    entrada.isIntersecting
+                                ) {
+
+                                    iniciarContador();
+
+                                    observer.disconnect();
+
+                                }
+
+                            }
+                        );
+
+                    },
+                    {
+                        threshold: 0.5
+                    }
+                );
+
+
+            observadorContador.observe(
+                contador
+            );
 
         } else {
 
-            animarContador();
+            iniciarContador();
 
         }
 
     }
 
-    // ---------------- MENU ATIVO ----------------
 
-    const secoes = document.querySelectorAll("main section[id]");
+    /* ==========================================
+       ROLAGEM SUAVE DOS LINKS
+    ========================================== */
 
-    if ("IntersectionObserver" in window) {
+    document
+        .querySelectorAll('a[href^="#"]')
+        .forEach((link) => {
 
-        const observerSecoes = new IntersectionObserver((entries) => {
+            link.addEventListener(
+                "click",
+                (evento) => {
 
-            entries.forEach(entry => {
+                    const id =
+                        link.getAttribute(
+                            "href"
+                        );
 
-                if (!entry.isIntersecting) return;
+                    const destino =
+                        document.querySelector(
+                            id
+                        );
 
-                const id = entry.target.id;
 
-                linksMenu.forEach(link => {
+                    if (destino) {
 
-                    const href = link.getAttribute("href");
+                        evento.preventDefault();
 
-                    if (href === "#" + id) {
-
-                        link.classList.add("ativo");
-
-                    } else {
-
-                        link.classList.remove("ativo");
+                        destino.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
 
                     }
 
-                });
-
-            });
-
-        }, {
-
-            threshold: 0.4
-
-        });
-
-        secoes.forEach(secao => {
-
-            observerSecoes.observe(secao);
-
-        });
-
-    }
-
-    // ---------------- SCROLL SUAVE ----------------
-
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-
-        link.addEventListener("click", function(e) {
-
-            const destino = document.querySelector(
-
-                this.getAttribute("href")
-
+                }
             );
 
-            if (!destino) return;
-
-            e.preventDefault();
-
-            destino.scrollIntoView({
-
-                behavior: "smooth",
-
-                block: "start"
-
-            });
-
         });
 
-    });
 
-    // ---------------- PRELOADER ----------------
+    /* ==========================================
+       TELA DE CARREGAMENTO
+    ========================================== */
 
-    window.addEventListener("load", () => {
-
-        if (preloader) {
+    window.addEventListener(
+        "load",
+        () => {
 
             setTimeout(() => {
 
-                preloader.classList.add("oculto");
+                if (preloader) {
 
-            }, 300);
+                    preloader.classList.add(
+                        "oculto"
+                    );
+
+                }
+
+            }, 250);
 
         }
+    );
 
-    });
+
+    /* Segurança:
+       remove a tela de carregamento
+       mesmo se algum arquivo demorar.
+    */
 
     setTimeout(() => {
 
         if (preloader) {
 
-            preloader.classList.add("oculto");
+            preloader.classList.add(
+                "oculto"
+            );
 
         }
 
-    }, 2500);
+    }, 2200);
 
 });
