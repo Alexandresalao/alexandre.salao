@@ -31,8 +31,182 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
+    <!--
+        v=10 força o navegador a baixar novamente
+        o CSS e ignorar versões antigas em cache.
+    -->
     <link rel="stylesheet"
-          href="css/estilo.css">
+          href="css/estilo.css?v=10">
+
+
+    <!-- ==========================================
+         CORREÇÃO DEFINITIVA DA GALERIA DE VÍDEOS
+
+         Esta regra fica depois do CSS externo
+         e utiliza !important para impedir que
+         regras antigas cortem os vídeos.
+    =========================================== -->
+
+    <style>
+
+        .videos-galeria{
+            width:100% !important;
+        }
+
+        .grade-videos{
+            display:grid !important;
+            grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+            gap:30px !important;
+            align-items:start !important;
+        }
+
+        .video-card{
+            width:100% !important;
+            max-width:100% !important;
+
+            overflow:hidden !important;
+
+            background:#0d0d0d !important;
+
+            border:1px solid rgba(255,255,255,.08) !important;
+            border-radius:14px !important;
+
+            box-shadow:0 20px 45px rgba(0,0,0,.25) !important;
+        }
+
+        /*
+            PARTE MAIS IMPORTANTE:
+
+            height:auto + aspect-ratio:auto
+            impede o quadro de forçar outro formato.
+
+            object-fit:contain impede qualquer corte.
+        */
+
+        .video-card video{
+            display:block !important;
+
+            width:100% !important;
+            height:auto !important;
+
+            min-height:0 !important;
+            max-height:none !important;
+
+            aspect-ratio:auto !important;
+
+            object-fit:contain !important;
+            object-position:center center !important;
+
+            background:#000 !important;
+
+            margin:0 auto !important;
+
+            transform:none !important;
+
+            zoom:1 !important;
+        }
+
+        .video-card:hover video{
+            transform:none !important;
+        }
+
+        .video-card h3{
+            margin:0 !important;
+
+            padding:20px 22px !important;
+
+            color:#f4f1eb !important;
+
+            font-family:"Cinzel",serif !important;
+
+            font-weight:500 !important;
+
+            text-align:center !important;
+
+            background:#0d0d0d !important;
+        }
+
+
+        /* ======================================
+           TABLET
+        ====================================== */
+
+        @media(max-width:1050px){
+
+            .grade-videos{
+                grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+                gap:22px !important;
+            }
+
+            .video-card video{
+                width:100% !important;
+                height:auto !important;
+
+                aspect-ratio:auto !important;
+
+                object-fit:contain !important;
+            }
+
+        }
+
+
+        /* ======================================
+           CELULAR
+        ====================================== */
+
+        @media(max-width:768px){
+
+            .grade-videos{
+                grid-template-columns:1fr !important;
+                gap:26px !important;
+            }
+
+            .video-card{
+                width:100% !important;
+            }
+
+            .video-card video{
+                display:block !important;
+
+                width:100% !important;
+                height:auto !important;
+
+                min-height:0 !important;
+                max-height:none !important;
+
+                aspect-ratio:auto !important;
+
+                object-fit:contain !important;
+                object-position:center center !important;
+
+                background:#000 !important;
+
+                transform:none !important;
+            }
+
+        }
+
+
+        /* ======================================
+           CELULARES PEQUENOS
+        ====================================== */
+
+        @media(max-width:480px){
+
+            .video-card video{
+                width:100% !important;
+                height:auto !important;
+
+                max-height:none !important;
+
+                aspect-ratio:auto !important;
+
+                object-fit:contain !important;
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -59,7 +233,6 @@
     =========================================== -->
 
     <header class="cabecalho-premium">
-
 
         <a href="#inicio"
            class="logo"
@@ -150,28 +323,21 @@
 
         </a>
 
-
     </header>
 
-
-    <!-- ==========================================
-         CONTEÚDO PRINCIPAL
-    =========================================== -->
 
     <main>
 
 
         <!-- ==========================================
-             BANNER PRINCIPAL COM VÍDEO
+             BANNER PRINCIPAL
         =========================================== -->
 
         <section class="hero"
                  id="inicio">
 
-
             <div class="hero-video-fundo"
                  aria-hidden="true">
-
 
                 <video autoplay
                        muted
@@ -179,7 +345,6 @@
                        playsinline
                        preload="auto"
                        poster="images/hero-poster.jpg">
-
 
                     <!-- VÍDEO PARA CELULAR -->
 
@@ -198,9 +363,7 @@
 
                     Seu navegador não suporta vídeos HTML5.
 
-
                 </video>
-
 
             </div>
 
@@ -217,11 +380,8 @@
 
             <div class="hero-conteudo">
 
-
                 <span class="hero-etiqueta">
-
                     Beleza • Elegância • Transformação
-
                 </span>
 
 
@@ -249,7 +409,6 @@
 
                 <div class="hero-botoes">
 
-
                     <a href="https://wa.me/5521992789166"
                        class="hero-btn hero-btn-principal"
                        target="_blank"
@@ -267,12 +426,10 @@
 
                     </a>
 
-
                 </div>
 
 
                 <div class="hero-destaques">
-
 
                     <div class="hero-destaque">
 
@@ -322,12 +479,9 @@
 
                     </div>
 
-
                 </div>
 
-
             </div>
-
 
         </section>
 
@@ -339,14 +493,11 @@
         <section id="sobre"
                  class="sobre">
 
-
             <div class="sobre-imagem">
-
 
                 <img src="images/alexandre.png"
                      alt="Alexandre, profissional do Alexandre Salão"
                      loading="lazy">
-
 
                 <div class="sobre-selo"
                      aria-hidden="true">
@@ -361,12 +512,10 @@
 
                 </div>
 
-
             </div>
 
 
             <div class="sobre-texto">
-
 
                 <h5>
                     DESDE 2003
@@ -399,90 +548,74 @@
 
                 <ul>
 
-
                     <li>
                         <i class="fa-solid fa-check"></i>
                         Especialista em Mechas
                     </li>
-
 
                     <li>
                         <i class="fa-solid fa-check"></i>
                         Loiro Iluminado
                     </li>
 
-
                     <li>
                         <i class="fa-solid fa-check"></i>
                         Moreno Iluminado
                     </li>
-
 
                     <li>
                         <i class="fa-solid fa-check"></i>
                         Técnica de Coloração
                     </li>
 
-
                     <li>
                         <i class="fa-solid fa-check"></i>
                         Técnica de Descoloração
                     </li>
-
 
                     <li>
                         <i class="fa-solid fa-check"></i>
                         Corte Feminino
                     </li>
 
-
                     <li>
                         <i class="fa-solid fa-check"></i>
                         Corte Long Bob
                     </li>
-
 
                     <li>
                         <i class="fa-solid fa-check"></i>
                         Corte Degradê Feminino
                     </li>
 
-
                     <li>
                         <i class="fa-solid fa-check"></i>
                         Corte Masculino
                     </li>
-
 
                     <li>
                         <i class="fa-solid fa-check"></i>
                         Prótese Capilar
                     </li>
 
-
                     <li>
                         <i class="fa-solid fa-check"></i>
                         Podologia
                     </li>
-
 
                     <li>
                         <i class="fa-solid fa-check"></i>
                         Manicure
                     </li>
 
-
                     <li>
                         <i class="fa-solid fa-check"></i>
                         Pedicure
                     </li>
 
-
                 </ul>
 
-
             </div>
-
 
         </section>
 
@@ -494,19 +627,15 @@
         <section id="servicos"
                  class="servicos">
 
-
             <div class="titulo-secao">
-
 
                 <h5>
                     NOSSAS ESPECIALIDADES
                 </h5>
 
-
                 <h2>
                     Serviços Premium
                 </h2>
-
 
                 <p>
 
@@ -518,14 +647,11 @@
 
                 </p>
 
-
             </div>
 
 
             <div class="cards-servicos cards-servicos-com-foto">
 
-
-                <!-- SERVIÇO 01 -->
 
                 <article class="card card-servico-foto">
 
@@ -535,28 +661,21 @@
 
                     <div class="card-servico-conteudo">
 
-                        <span>
-                            01
-                        </span>
+                        <span>01</span>
 
                         <h3>
                             Mechas Loiro
                         </h3>
 
                         <p>
-
-                            Iluminação sofisticada com
-                            equilíbrio de tons e acabamento
-                            premium.
-
+                            Iluminação sofisticada com equilíbrio
+                            de tons e acabamento premium.
                         </p>
 
                     </div>
 
                 </article>
 
-
-                <!-- SERVIÇO 02 -->
 
                 <article class="card card-servico-foto">
 
@@ -566,27 +685,21 @@
 
                     <div class="card-servico-conteudo">
 
-                        <span>
-                            02
-                        </span>
+                        <span>02</span>
 
                         <h3>
                             Loiro Iluminado
                         </h3>
 
                         <p>
-
-                            Clareamento elegante com
-                            luminosidade e naturalidade.
-
+                            Clareamento elegante com luminosidade
+                            e naturalidade.
                         </p>
 
                     </div>
 
                 </article>
 
-
-                <!-- SERVIÇO 03 -->
 
                 <article class="card card-servico-foto">
 
@@ -596,28 +709,21 @@
 
                     <div class="card-servico-conteudo">
 
-                        <span>
-                            03
-                        </span>
+                        <span>03</span>
 
                         <h3>
                             Moreno Iluminado
                         </h3>
 
                         <p>
-
-                            Pontos de luz estratégicos
-                            para profundidade, movimento
-                            e elegância.
-
+                            Pontos de luz estratégicos para
+                            profundidade, movimento e elegância.
                         </p>
 
                     </div>
 
                 </article>
 
-
-                <!-- SERVIÇO 04 -->
 
                 <article class="card card-servico-foto">
 
@@ -627,28 +733,21 @@
 
                     <div class="card-servico-conteudo">
 
-                        <span>
-                            04
-                        </span>
+                        <span>04</span>
 
                         <h3>
                             Técnica de Coloração
                         </h3>
 
                         <p>
-
                             Coloração profissional,
-                            neutralização de tons
-                            e correção de cor.
-
+                            neutralização de tons e correção de cor.
                         </p>
 
                     </div>
 
                 </article>
 
-
-                <!-- SERVIÇO 05 -->
 
                 <article class="card card-servico-foto">
 
@@ -658,28 +757,21 @@
 
                     <div class="card-servico-conteudo">
 
-                        <span>
-                            05
-                        </span>
+                        <span>05</span>
 
                         <h3>
                             Técnica de Descoloração
                         </h3>
 
                         <p>
-
                             Descoloração técnica com atenção
-                            ao resultado e à integridade
-                            dos fios.
-
+                            ao resultado e à integridade dos fios.
                         </p>
 
                     </div>
 
                 </article>
 
-
-                <!-- SERVIÇO 06 -->
 
                 <article class="card card-servico-foto">
 
@@ -689,27 +781,21 @@
 
                     <div class="card-servico-conteudo">
 
-                        <span>
-                            06
-                        </span>
+                        <span>06</span>
 
                         <h3>
                             Corte Feminino
                         </h3>
 
                         <p>
-
                             Cortes modernos e personalizados,
                             do cabelo longo ao curto.
-
                         </p>
 
                     </div>
 
                 </article>
 
-
-                <!-- SERVIÇO 07 -->
 
                 <article class="card card-servico-foto">
 
@@ -719,27 +805,21 @@
 
                     <div class="card-servico-conteudo">
 
-                        <span>
-                            07
-                        </span>
+                        <span>07</span>
 
                         <h3>
                             Corte Long Bob
                         </h3>
 
                         <p>
-
                             Linhas elegantes e modernas
                             para um visual sofisticado.
-
                         </p>
 
                     </div>
 
                 </article>
 
-
-                <!-- SERVIÇO 08 -->
 
                 <article class="card card-servico-foto">
 
@@ -749,27 +829,21 @@
 
                     <div class="card-servico-conteudo">
 
-                        <span>
-                            08
-                        </span>
+                        <span>08</span>
 
                         <h3>
                             Corte Degradê Feminino
                         </h3>
 
                         <p>
-
                             Movimento, leveza e acabamento
                             em camadas graduais.
-
                         </p>
 
                     </div>
 
                 </article>
 
-
-                <!-- SERVIÇO 09 -->
 
                 <article class="card card-servico-foto">
 
@@ -779,28 +853,21 @@
 
                     <div class="card-servico-conteudo">
 
-                        <span>
-                            09
-                        </span>
+                        <span>09</span>
 
                         <h3>
                             Corte Masculino
                         </h3>
 
                         <p>
-
                             Estilo, precisão e acabamento
-                            impecável para diferentes
-                            perfis masculinos.
-
+                            impecável para diferentes perfis masculinos.
                         </p>
 
                     </div>
 
                 </article>
 
-
-                <!-- SERVIÇO 10 -->
 
                 <article class="card card-servico-foto">
 
@@ -810,28 +877,21 @@
 
                     <div class="card-servico-conteudo">
 
-                        <span>
-                            10
-                        </span>
+                        <span>10</span>
 
                         <h3>
                             Prótese Capilar
                         </h3>
 
                         <p>
-
-                            Soluções personalizadas
-                            para homens e mulheres
-                            com naturalidade.
-
+                            Soluções personalizadas para homens
+                            e mulheres com naturalidade.
                         </p>
 
                     </div>
 
                 </article>
 
-
-                <!-- SERVIÇO 11 -->
 
                 <article class="card card-servico-foto">
 
@@ -841,28 +901,21 @@
 
                     <div class="card-servico-conteudo">
 
-                        <span>
-                            11
-                        </span>
+                        <span>11</span>
 
                         <h3>
                             Podologia
                         </h3>
 
                         <p>
-
-                            Cuidados profissionais para
-                            saúde, conforto e bem-estar
-                            dos pés.
-
+                            Cuidados profissionais para saúde,
+                            conforto e bem-estar dos pés.
                         </p>
 
                     </div>
 
                 </article>
 
-
-                <!-- SERVIÇO 12 -->
 
                 <article class="card card-servico-foto">
 
@@ -872,27 +925,21 @@
 
                     <div class="card-servico-conteudo">
 
-                        <span>
-                            12
-                        </span>
+                        <span>12</span>
 
                         <h3>
                             Manicure
                         </h3>
 
                         <p>
-
-                            Cuidados e acabamento
-                            profissional para as mãos.
-
+                            Cuidados e acabamento profissional
+                            para as mãos.
                         </p>
 
                     </div>
 
                 </article>
 
-
-                <!-- SERVIÇO 13 -->
 
                 <article class="card card-servico-foto">
 
@@ -902,28 +949,22 @@
 
                     <div class="card-servico-conteudo">
 
-                        <span>
-                            13
-                        </span>
+                        <span>13</span>
 
                         <h3>
                             Pedicure
                         </h3>
 
                         <p>
-
-                            Cuidados completos para
-                            beleza e bem-estar dos pés.
-
+                            Cuidados completos para beleza
+                            e bem-estar dos pés.
                         </p>
 
                     </div>
 
                 </article>
 
-
             </div>
-
 
         </section>
 
@@ -934,7 +975,6 @@
 
         <section id="portfolio"
                  class="portfolio">
-
 
             <div class="titulo-secao">
 
@@ -962,8 +1002,6 @@
             <div class="galeria galeria-automatica">
 
 
-                <!-- FOTO 01 -->
-
                 <figure class="foto">
 
                     <img src="images/portfolio/foto1.jpg"
@@ -971,21 +1009,12 @@
                          loading="lazy">
 
                     <figcaption>
-
-                        <span>
-                            01
-                        </span>
-
-                        <strong>
-                            Mechas Loiro
-                        </strong>
-
+                        <span>01</span>
+                        <strong>Mechas Loiro</strong>
                     </figcaption>
 
                 </figure>
 
-
-                <!-- FOTO 02 -->
 
                 <figure class="foto">
 
@@ -994,21 +1023,12 @@
                          loading="lazy">
 
                     <figcaption>
-
-                        <span>
-                            02
-                        </span>
-
-                        <strong>
-                            Moreno Iluminado
-                        </strong>
-
+                        <span>02</span>
+                        <strong>Moreno Iluminado</strong>
                     </figcaption>
 
                 </figure>
 
-
-                <!-- FOTO 03 -->
 
                 <figure class="foto">
 
@@ -1017,21 +1037,12 @@
                          loading="lazy">
 
                     <figcaption>
-
-                        <span>
-                            03
-                        </span>
-
-                        <strong>
-                            Coloração
-                        </strong>
-
+                        <span>03</span>
+                        <strong>Coloração</strong>
                     </figcaption>
 
                 </figure>
 
-
-                <!-- FOTO 04 -->
 
                 <figure class="foto">
 
@@ -1040,21 +1051,12 @@
                          loading="lazy">
 
                     <figcaption>
-
-                        <span>
-                            04
-                        </span>
-
-                        <strong>
-                            Corte Feminino
-                        </strong>
-
+                        <span>04</span>
+                        <strong>Corte Feminino</strong>
                     </figcaption>
 
                 </figure>
 
-
-                <!-- FOTO 05 -->
 
                 <figure class="foto">
 
@@ -1063,21 +1065,12 @@
                          loading="lazy">
 
                     <figcaption>
-
-                        <span>
-                            05
-                        </span>
-
-                        <strong>
-                            Prótese Capilar
-                        </strong>
-
+                        <span>05</span>
+                        <strong>Prótese Capilar</strong>
                     </figcaption>
 
                 </figure>
 
-
-                <!-- FOTO 06 -->
 
                 <figure class="foto">
 
@@ -1086,21 +1079,12 @@
                          loading="lazy">
 
                     <figcaption>
-
-                        <span>
-                            06
-                        </span>
-
-                        <strong>
-                            Transformação Capilar
-                        </strong>
-
+                        <span>06</span>
+                        <strong>Transformação Capilar</strong>
                     </figcaption>
 
                 </figure>
 
-
-                <!-- FOTO 07 -->
 
                 <figure class="foto">
 
@@ -1109,21 +1093,12 @@
                          loading="lazy">
 
                     <figcaption>
-
-                        <span>
-                            07
-                        </span>
-
-                        <strong>
-                            Corte Masculino
-                        </strong>
-
+                        <span>07</span>
+                        <strong>Corte Masculino</strong>
                     </figcaption>
 
                 </figure>
 
-
-                <!-- FOTO 08 -->
 
                 <figure class="foto">
 
@@ -1132,21 +1107,12 @@
                          loading="lazy">
 
                     <figcaption>
-
-                        <span>
-                            08
-                        </span>
-
-                        <strong>
-                            Técnica de Coloração
-                        </strong>
-
+                        <span>08</span>
+                        <strong>Técnica de Coloração</strong>
                     </figcaption>
 
                 </figure>
 
-
-                <!-- FOTO 09 -->
 
                 <figure class="foto">
 
@@ -1155,21 +1121,12 @@
                          loading="lazy">
 
                     <figcaption>
-
-                        <span>
-                            09
-                        </span>
-
-                        <strong>
-                            Técnica de Descoloração
-                        </strong>
-
+                        <span>09</span>
+                        <strong>Técnica de Descoloração</strong>
                     </figcaption>
 
                 </figure>
 
-
-                <!-- FOTO 10 -->
 
                 <figure class="foto">
 
@@ -1178,21 +1135,12 @@
                          loading="lazy">
 
                     <figcaption>
-
-                        <span>
-                            10
-                        </span>
-
-                        <strong>
-                            Corte Long Bob
-                        </strong>
-
+                        <span>10</span>
+                        <strong>Corte Long Bob</strong>
                     </figcaption>
 
                 </figure>
 
-
-                <!-- FOTO 11 -->
 
                 <figure class="foto">
 
@@ -1201,46 +1149,33 @@
                          loading="lazy">
 
                     <figcaption>
-
-                        <span>
-                            11
-                        </span>
-
-                        <strong>
-                            Corte Degradê Feminino
-                        </strong>
-
+                        <span>11</span>
+                        <strong>Corte Degradê Feminino</strong>
                     </figcaption>
 
                 </figure>
 
-
             </div>
-
 
         </section>
 
 
         <!-- ==========================================
-             GALERIA ANTES E DEPOIS
+             ANTES E DEPOIS
         =========================================== -->
 
         <section id="antes-depois"
                  class="antes-depois">
 
-
             <div class="titulo-secao">
-
 
                 <h5>
                     RESULTADOS
                 </h5>
 
-
                 <h2>
                     Antes e Depois
                 </h2>
-
 
                 <p>
 
@@ -1252,17 +1187,13 @@
 
                 </p>
 
-
             </div>
 
 
             <div class="grade-antes-depois">
 
 
-                <!-- TRANSFORMAÇÃO 01 -->
-
                 <article class="comparacao">
-
 
                     <div>
 
@@ -1289,14 +1220,10 @@
 
                     </div>
 
-
                 </article>
 
 
-                <!-- TRANSFORMAÇÃO 02 -->
-
                 <article class="comparacao">
-
 
                     <div>
 
@@ -1323,14 +1250,10 @@
 
                     </div>
 
-
                 </article>
 
 
-                <!-- TRANSFORMAÇÃO 03 -->
-
                 <article class="comparacao">
-
 
                     <div>
 
@@ -1357,12 +1280,9 @@
 
                     </div>
 
-
                 </article>
 
-
             </div>
-
 
         </section>
 
@@ -1374,19 +1294,15 @@
         <section id="videos"
                  class="videos-galeria">
 
-
             <div class="titulo-secao">
-
 
                 <h5>
                     EM MOVIMENTO
                 </h5>
 
-
                 <h2>
                     Galeria de Vídeos
                 </h2>
-
 
                 <p>
 
@@ -1396,131 +1312,113 @@
 
                 </p>
 
-
             </div>
 
 
             <div class="grade-videos">
 
 
-                <!-- VÍDEO 01 -->
+                <!-- ==================================
+                     TRANSFORMAÇÃO 01
+                =================================== -->
 
                 <article class="video-card">
 
-
                     <video controls
                            playsinline
-                           preload="auto">
-
+                           preload="metadata">
 
                         <source
                             src="https://raw.githubusercontent.com/Alexandresalao/alexandre.salao/main/videos/video01.mp4"
                             type="video/mp4">
 
-
                         Seu navegador não suporta vídeos HTML5.
 
-
                     </video>
-
 
                     <h3>
                         Transformação 01
                     </h3>
 
-
                 </article>
 
 
-                <!-- VÍDEO 02 -->
+                <!-- ==================================
+                     TRANSFORMAÇÃO 02
+                =================================== -->
 
                 <article class="video-card">
 
-
                     <video controls
                            playsinline
-                           preload="auto">
-
+                           preload="metadata">
 
                         <source
                             src="https://raw.githubusercontent.com/Alexandresalao/alexandre.salao/main/videos/video02.mp4"
                             type="video/mp4">
 
-
                         Seu navegador não suporta vídeos HTML5.
 
-
                     </video>
-
 
                     <h3>
                         Transformação 02
                     </h3>
 
-
                 </article>
 
 
-                <!-- VÍDEO 03 -->
+                <!-- ==================================
+                     TRANSFORMAÇÃO 03
+                =================================== -->
 
                 <article class="video-card">
 
-
                     <video controls
                            playsinline
-                           preload="auto">
-
+                           preload="metadata">
 
                         <source
                             src="https://raw.githubusercontent.com/Alexandresalao/alexandre.salao/main/videos/video03.mp4"
                             type="video/mp4">
 
-
                         Seu navegador não suporta vídeos HTML5.
 
-
                     </video>
-
 
                     <h3>
                         Transformação 03
                     </h3>
 
-
                 </article>
 
 
-                <!-- VÍDEO 04 -->
+                <!-- ==================================
+                     TRANSFORMAÇÃO 04
+                =================================== -->
 
                 <article class="video-card">
 
-
                     <video controls
                            playsinline
-                           preload="auto">
-
+                           preload="metadata">
 
                         <source
                             src="https://raw.githubusercontent.com/Alexandresalao/alexandre.salao/main/videos/video04.mp4"
                             type="video/mp4">
 
-
                         Seu navegador não suporta vídeos HTML5.
 
-
                     </video>
-
 
                     <h3>
                         Transformação 04
                     </h3>
 
-
                 </article>
 
 
             </div>
-
 
         </section>
 
@@ -1532,19 +1430,15 @@
         <section id="depoimentos"
                  class="depoimentos">
 
-
             <div class="titulo-secao">
-
 
                 <h5>
                     AVALIAÇÕES
                 </h5>
 
-
                 <h2>
                     O que nossos clientes dizem
                 </h2>
-
 
                 <p>
 
@@ -1554,17 +1448,13 @@
 
                 </p>
 
-
             </div>
 
 
             <div class="cards-depoimentos">
 
 
-                <!-- DEPOIMENTO 01 -->
-
                 <article class="depoimento">
-
 
                     <div class="estrelas"
                          aria-label="Avaliação de cinco estrelas">
@@ -1572,7 +1462,6 @@
                         ★★★★★
 
                     </div>
-
 
                     <p>
 
@@ -1581,19 +1470,14 @@
 
                     </p>
 
-
                     <h4>
                         Mariana Souza
                     </h4>
 
-
                 </article>
 
 
-                <!-- DEPOIMENTO 02 -->
-
                 <article class="depoimento">
-
 
                     <div class="estrelas"
                          aria-label="Avaliação de cinco estrelas">
@@ -1601,7 +1485,6 @@
                         ★★★★★
 
                     </div>
-
 
                     <p>
 
@@ -1610,19 +1493,14 @@
 
                     </p>
 
-
                     <h4>
                         Fernanda Oliveira
                     </h4>
 
-
                 </article>
 
 
-                <!-- DEPOIMENTO 03 -->
-
                 <article class="depoimento">
-
 
                     <div class="estrelas"
                          aria-label="Avaliação de cinco estrelas">
@@ -1631,7 +1509,6 @@
 
                     </div>
 
-
                     <p>
 
                         “Melhor especialista em loiros da região.
@@ -1639,27 +1516,22 @@
 
                     </p>
 
-
                     <h4>
                         Juliana Martins
                     </h4>
 
-
                 </article>
 
-
             </div>
-
 
         </section>
 
 
         <!-- ==========================================
-             CHAMADA PARA AGENDAMENTO
+             AGENDAMENTO
         =========================================== -->
 
         <section class="chamada-agendamento">
-
 
             <div class="chamada-overlay"
                  aria-hidden="true">
@@ -1668,11 +1540,9 @@
 
             <div class="chamada-conteudo">
 
-
                 <span>
                     SUA TRANSFORMAÇÃO COMEÇA AQUI
                 </span>
-
 
                 <h2>
 
@@ -1680,7 +1550,6 @@
                     da sua beleza
 
                 </h2>
-
 
                 <p>
 
@@ -1690,28 +1559,21 @@
 
                 </p>
 
-
                 <a href="https://wa.me/5521992789166"
                    target="_blank"
                    rel="noopener noreferrer">
-
 
                     <i class="fa-brands fa-whatsapp"
                        aria-hidden="true">
                     </i>
 
-
                     Agendar pelo WhatsApp
-
 
                 </a>
 
-
             </div>
 
-
         </section>
-
 
     </main>
 
@@ -1723,19 +1585,14 @@
     <footer class="footer"
             id="contato">
 
-
         <div class="footer-conteudo">
 
 
-            <!-- LOGO E DESCRIÇÃO -->
-
             <div class="footer-logo">
-
 
                 <h2>
                     ALEXANDRE SALÃO
                 </h2>
-
 
                 <p>
 
@@ -1744,19 +1601,14 @@
 
                 </p>
 
-
             </div>
 
 
-            <!-- CONTATO -->
-
             <div class="footer-info">
-
 
                 <h3>
                     Contato
                 </h3>
-
 
                 <p>
 
@@ -1764,13 +1616,9 @@
                        aria-hidden="true">
                     </i>
 
-
                     <a href="tel:+5521992789166">
-
                         (21) 99278-9166
-
                     </a>
-
 
                 </p>
 
@@ -1781,9 +1629,7 @@
                        aria-hidden="true">
                     </i>
 
-
                     Nova Iguaçu - Rio de Janeiro
-
 
                 </p>
 
@@ -1794,58 +1640,43 @@
                        aria-hidden="true">
                     </i>
 
-
                     <a href="mailto:alexandresouzadasilva1985@gmail.com">
-
                         alexandresouzadasilva1985@gmail.com
-
                     </a>
 
-
                 </p>
-
 
             </div>
 
 
-            <!-- HORÁRIO -->
-
             <div class="footer-horario">
-
 
                 <h3>
                     Horário de atendimento
                 </h3>
 
-
                 <p>
                     Segunda a sexta-feira
                 </p>
-
 
                 <strong>
                     09h às 19h
                 </strong>
 
-
                 <p>
                     Sábado
                 </p>
-
 
                 <strong>
                     09h às 18h
                 </strong>
 
-
             </div>
-
 
         </div>
 
 
         <div class="footer-copy">
-
 
             <p>
 
@@ -1855,9 +1686,7 @@
 
             </p>
 
-
         </div>
-
 
     </footer>
 
@@ -1869,24 +1698,18 @@
     <div class="botoes-flutuantes">
 
 
-        <!-- INSTAGRAM -->
-
         <a href="https://www.instagram.com/alexandre.salao?igsh=MWl5eHB3Mzd4Nm44eQ=="
            class="instagram-fixo"
            target="_blank"
            rel="noopener noreferrer"
            aria-label="Instagram do Alexandre Salão">
 
-
             <i class="fa-brands fa-instagram"
                aria-hidden="true">
             </i>
 
-
         </a>
 
-
-        <!-- WHATSAPP -->
 
         <a href="https://wa.me/5521992789166"
            class="whatsapp-fixo"
@@ -1894,42 +1717,33 @@
            rel="noopener noreferrer"
            aria-label="WhatsApp do Alexandre Salão">
 
-
             <i class="fa-brands fa-whatsapp"
                aria-hidden="true">
             </i>
 
-
         </a>
 
-
-        <!-- VOLTAR AO TOPO -->
 
         <a href="#inicio"
            class="voltar-topo"
            aria-label="Voltar ao topo">
 
-
             <i class="fa-solid fa-chevron-up"
                aria-hidden="true">
             </i>
 
-
         </a>
-
 
     </div>
 
 
     <!-- ==========================================
          LIGHTBOX
-         JANELA PARA ABRIR AS FOTOS GRANDES
     =========================================== -->
 
     <div class="lightbox"
          id="lightbox"
          aria-hidden="true">
-
 
         <button class="lightbox-fechar"
                 type="button"
@@ -1939,11 +1753,9 @@
 
         </button>
 
-
         <img src=""
              alt="Imagem ampliada"
              id="lightbox-imagem">
-
 
     </div>
 
