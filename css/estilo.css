@@ -11,6 +11,11 @@
     --container:1180px;
 }
 
+
+/* ==========================================
+   CONFIGURAÇÕES GERAIS
+========================================== */
+
 *{
     margin:0;
     padding:0;
@@ -49,10 +54,15 @@ ul{
     list-style:none;
 }
 
+button{
+    font:inherit;
+}
+
 ::selection{
     background:var(--dourado);
     color:#000;
 }
+
 
 /* ==========================================
    TELA DE CARREGAMENTO
@@ -62,10 +72,15 @@ ul{
     position:fixed;
     inset:0;
     z-index:9999;
+
     display:grid;
     place-items:center;
+
     background:var(--preto);
-    transition:.6s;
+
+    transition:
+        opacity .6s ease,
+        visibility .6s ease;
 }
 
 .preloader.oculto{
@@ -76,14 +91,19 @@ ul{
 .preloader-marca{
     width:88px;
     height:88px;
-    border:1px solid var(--dourado);
-    border-radius:50%;
+
     display:grid;
     place-items:center;
+
+    border:1px solid var(--dourado);
+    border-radius:50%;
+
     color:var(--dourado-claro);
+
     font-family:"Cinzel",serif;
     letter-spacing:.2em;
 }
+
 
 /* ==========================================
    CABEÇALHO
@@ -93,53 +113,87 @@ ul{
     position:fixed;
     top:0;
     left:0;
+
     width:100%;
     min-height:88px;
+
     z-index:1000;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
+
     gap:24px;
+
     padding:0 5vw;
+
     transition:var(--transicao);
 }
 
 .cabecalho-premium.rolado{
     min-height:74px;
+
     background:rgba(5,5,5,.92);
+
     border-bottom:1px solid var(--borda);
+
     backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
 }
+
+
+/* ==========================================
+   LOGO
+========================================== */
 
 .logo{
     display:flex;
     flex-direction:column;
+
     line-height:1;
 }
 
 .logo-principal{
     font-family:"Cinzel",serif;
+
     letter-spacing:.22em;
+
     font-weight:600;
 }
 
 .logo-secundaria{
     margin-top:7px;
+
     color:var(--dourado);
+
     font-size:.62rem;
+
     letter-spacing:.48em;
 }
 
+
+/* ==========================================
+   MENU
+========================================== */
+
 #menu-principal ul{
     display:flex;
+
     gap:clamp(14px,2vw,30px);
 }
 
 #menu-principal a{
-    font-size:.72rem;
-    letter-spacing:.08em;
-    text-transform:uppercase;
+    position:relative;
+
     color:rgba(244,241,235,.82);
+
+    font-size:.72rem;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+    transition:var(--transicao);
 }
 
 #menu-principal a:hover,
@@ -147,28 +201,63 @@ ul{
     color:var(--dourado-claro);
 }
 
+
+/* ==========================================
+   BOTÃO AGENDAR DO CABEÇALHO
+========================================== */
+
 .btn-whatsapp{
     padding:13px 22px;
+
     border:1px solid var(--dourado);
+
     color:var(--dourado-claro);
+
     font-size:.72rem;
+
     text-transform:uppercase;
+
+    letter-spacing:.08em;
+
+    transition:var(--transicao);
 }
+
+.btn-whatsapp:hover{
+    background:var(--dourado);
+
+    color:#000;
+
+    transform:translateY(-2px);
+}
+
+
+/* ==========================================
+   MENU HAMBÚRGUER
+========================================== */
 
 .menu-toggle{
     display:none;
+
     width:46px;
     height:46px;
+
     border:1px solid var(--borda);
+
     background:transparent;
+
+    cursor:pointer;
 }
 
 .menu-toggle span{
     display:block;
+
     width:22px;
     height:1px;
+
     background:#fff;
+
     margin:6px auto;
+
     transition:.3s;
 }
 
@@ -184,38 +273,56 @@ ul{
     transform:translateY(-7px) rotate(-45deg);
 }
 
+
 /* ==========================================
    BANNER PRINCIPAL COM VÍDEO
 ========================================== */
 
 .hero{
     position:relative;
+
     min-height:100svh;
+
     display:flex;
     align-items:center;
+
     overflow:hidden;
+
     isolation:isolate;
+
     padding:150px 7vw 120px;
+
     background:#000;
 }
 
 .hero-video-fundo{
     position:absolute;
+
     inset:0;
+
     z-index:0;
+
+    overflow:hidden;
 }
 
 .hero-video-fundo video{
     width:100%;
     height:100%;
+
     object-fit:cover;
+
     object-position:center center;
+
+    background:#000;
 }
 
 .hero-overlay{
     position:absolute;
+
     inset:0;
+
     z-index:1;
+
     background:
         linear-gradient(
             90deg,
@@ -233,39 +340,56 @@ ul{
 
 .hero-brilho{
     position:absolute;
+
     z-index:2;
+
     top:-20%;
     left:18%;
+
     width:720px;
     height:720px;
+
     border-radius:50%;
+
     background:
         radial-gradient(
             circle,
             rgba(201,164,92,.17),
             transparent 70%
         );
+
     filter:blur(18px);
+
+    pointer-events:none;
 }
 
 .hero-conteudo{
     position:relative;
+
     z-index:3;
+
     width:min(760px,100%);
 }
 
 .hero-etiqueta{
     color:var(--dourado-claro);
+
     font-size:.72rem;
+
     letter-spacing:.22em;
+
     text-transform:uppercase;
 }
 
 .hero h1{
     margin-top:22px;
+
     font-family:"Cinzel",serif;
+
     font-size:clamp(2.8rem,6vw,6.4rem);
+
     font-weight:500;
+
     line-height:1.04;
 }
 
@@ -275,27 +399,40 @@ ul{
 
 .hero-descricao{
     max-width:640px;
+
     margin-top:26px;
+
     color:rgba(244,241,235,.72);
+
+    font-size:1rem;
 }
 
 .hero-botoes{
     display:flex;
     flex-wrap:wrap;
+
     gap:16px;
+
     margin-top:36px;
 }
 
 .hero-btn{
     min-height:54px;
+
     display:inline-flex;
     align-items:center;
     justify-content:center;
+
     padding:0 28px;
+
     border:1px solid var(--dourado);
+
     font-size:.76rem;
+
     text-transform:uppercase;
+
     letter-spacing:.1em;
+
     transition:var(--transicao);
 }
 
@@ -304,28 +441,39 @@ ul{
 }
 
 .hero-btn-principal{
-    background:linear-gradient(
-        110deg,
-        #8b6b32,
-        var(--dourado-claro)
-    );
+    background:
+        linear-gradient(
+            110deg,
+            #8b6b32,
+            var(--dourado-claro)
+        );
+
     color:#000;
 }
 
 .hero-btn-secundario{
     color:#fff;
+
     background:rgba(255,255,255,.03);
+}
+
+.hero-btn-secundario:hover{
+    background:rgba(201,164,92,.12);
 }
 
 .hero-destaques{
     display:flex;
+
     gap:26px;
+
     align-items:stretch;
+
     margin-top:52px;
 }
 
 .hero-destaque{
     display:flex;
+
     flex-direction:column;
 }
 
@@ -335,34 +483,44 @@ ul{
 
 .hero-destaque span{
     max-width:160px;
+
     color:rgba(244,241,235,.5);
+
     font-size:.68rem;
+
     text-transform:uppercase;
 }
 
 .hero-linha{
     width:1px;
-    background:linear-gradient(
-        transparent,
-        var(--borda),
-        transparent
-    );
+
+    background:
+        linear-gradient(
+            transparent,
+            var(--borda),
+            transparent
+        );
 }
 
+
 /* ==========================================
-   TÍTULOS
+   TÍTULOS DAS SEÇÕES
 ========================================== */
 
 .titulo-secao{
     width:min(760px,100%);
+
     margin:0 auto 58px;
+
     text-align:center;
 }
 
 .titulo-secao h5,
 .sobre-texto h5{
     color:var(--dourado);
+
     font-size:.72rem;
+
     letter-spacing:.24em;
 }
 
@@ -370,15 +528,20 @@ ul{
 .sobre-texto h2,
 .chamada-conteudo h2{
     font-family:"Cinzel",serif;
+
     font-size:clamp(2rem,4vw,4rem);
+
     font-weight:500;
+
     line-height:1.2;
 }
 
 .titulo-secao p{
     margin-top:18px;
+
     color:var(--cinza);
 }
+
 
 /* ==========================================
    SOBRE
@@ -386,11 +549,17 @@ ul{
 
 .sobre{
     max-width:var(--container);
+
     margin:auto;
+
     padding:125px 30px;
+
     display:grid;
+
     grid-template-columns:.92fr 1.08fr;
+
     gap:80px;
+
     align-items:center;
 }
 
@@ -400,41 +569,58 @@ ul{
 
 .sobre-imagem img{
     width:100%;
+
     min-height:590px;
+
     object-fit:cover;
+
     object-position:center top;
 }
 
 .sobre-imagem:before{
     content:"";
+
     position:absolute;
+
     inset:18px -18px -18px 18px;
+
     border:1px solid var(--borda);
+
     z-index:-1;
 }
 
 .sobre-selo{
     position:absolute;
+
     right:-25px;
     bottom:30px;
+
     width:120px;
     height:120px;
+
     border:1px solid var(--dourado);
+
     border-radius:50%;
+
     display:grid;
     place-content:center;
+
     text-align:center;
+
     background:rgba(5,5,5,.9);
 }
 
 .sobre-selo span{
     font-size:.6rem;
+
     letter-spacing:.2em;
 }
 
 .sobre-selo strong{
     font-family:"Cinzel",serif;
+
     color:var(--dourado-claro);
+
     font-size:1.35rem;
 }
 
@@ -448,51 +634,72 @@ ul{
 
 .sobre-texto>p{
     margin-top:24px;
+
     color:var(--cinza);
 }
 
 .sobre-texto ul{
     display:grid;
+
     grid-template-columns:repeat(2,1fr);
+
     gap:13px 20px;
+
     margin-top:30px;
 }
 
 .sobre-texto li{
     display:flex;
+
     gap:10px;
+
     font-size:.84rem;
+
     color:rgba(244,241,235,.8);
 }
 
 .sobre-texto i{
     color:var(--dourado);
+
     margin-top:5px;
 }
 
+
 /* ==========================================
-   SERVIÇOS COM FOTOS
+   SERVIÇOS
 ========================================== */
 
 .servicos{
     padding:
         125px
-        max(30px,calc((100vw - var(--container))/2));
+        max(
+            30px,
+            calc((100vw - var(--container))/2)
+        );
+
     background:var(--preto-claro);
 }
 
 .cards-servicos-com-foto{
     display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
     gap:26px;
 }
 
 .card-servico-foto{
     position:relative;
+
     overflow:hidden;
+
     min-height:570px;
+
     border:1px solid rgba(255,255,255,.07);
+
     background:#111;
+
     transition:
         transform .4s ease,
         border-color .4s ease,
@@ -501,22 +708,25 @@ ul{
 
 .card-servico-foto:hover{
     transform:translateY(-5px);
-    border-color:rgba(201,164,92,.45);
-    box-shadow:0 24px 50px rgba(0,0,0,.28);
-}
 
-/*
-   IMPORTANTE:
-   A FOTO AGORA TEM 390px.
-   Isso permite mostrar muito mais do rosto e cabelo.
-*/
+    border-color:rgba(201,164,92,.45);
+
+    box-shadow:
+        0 24px 50px
+        rgba(0,0,0,.28);
+}
 
 .card-servico-foto img{
     width:100%;
+
     height:390px;
+
     object-fit:cover;
+
     object-position:center top;
+
     cursor:zoom-in;
+
     transition:
         transform .65s ease,
         filter .65s ease;
@@ -524,7 +734,10 @@ ul{
 
 .card-servico-foto:hover img{
     transform:scale(1.035);
-    filter:brightness(1.04) contrast(1.02);
+
+    filter:
+        brightness(1.04)
+        contrast(1.02);
 }
 
 .card-servico-conteudo{
@@ -533,21 +746,28 @@ ul{
 
 .card-servico-conteudo>span{
     color:var(--dourado);
+
     font-size:.68rem;
+
     letter-spacing:.16em;
 }
 
 .card-servico-conteudo h3{
     margin-top:8px;
+
     font-family:"Cinzel",serif;
+
     font-size:1.15rem;
 }
 
 .card-servico-conteudo p{
     margin-top:10px;
+
     color:var(--cinza);
+
     font-size:.84rem;
 }
+
 
 /* ==========================================
    PORTFÓLIO
@@ -557,43 +777,63 @@ ul{
 .antes-depois,
 .videos-galeria{
     max-width:calc(var(--container) + 60px);
+
     margin:auto;
+
     padding:125px 30px;
 }
 
 .galeria-automatica{
     display:grid;
+
     grid-template-columns:
-        repeat(auto-fit,minmax(280px,1fr));
+        repeat(
+            auto-fit,
+            minmax(280px,1fr)
+        );
+
     gap:20px;
 }
 
 .foto{
     position:relative;
+
     overflow:hidden;
+
     height:420px;
+
     background:var(--grafite);
+
     border-radius:14px;
+
     cursor:zoom-in;
 }
 
 .foto:after{
     content:"";
+
     position:absolute;
+
     inset:0;
+
     pointer-events:none;
-    background:linear-gradient(
-        180deg,
-        transparent 45%,
-        rgba(0,0,0,.88)
-    );
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 45%,
+            rgba(0,0,0,.88)
+        );
 }
 
 .foto img{
     width:100%;
     height:100%;
+
     object-fit:cover;
+
     object-position:center top;
+
     transition:.6s;
 }
 
@@ -603,18 +843,25 @@ ul{
 
 .foto figcaption{
     position:absolute;
+
     left:24px;
     right:24px;
     bottom:20px;
+
     z-index:2;
+
     display:flex;
+
     gap:12px;
+
     align-items:center;
+
     pointer-events:none;
 }
 
 .foto figcaption span{
     color:var(--dourado);
+
     font-size:.68rem;
 }
 
@@ -622,35 +869,53 @@ ul{
     font-family:"Cinzel",serif;
 }
 
+
 /* ==========================================
-   ANTES E DEPOIS
+   GALERIA ANTES E DEPOIS
 ========================================== */
 
 .antes-depois{
     background:#080808;
+
     max-width:none;
+
     padding-left:
-        max(30px,calc((100vw - var(--container))/2));
+        max(
+            30px,
+            calc((100vw - var(--container))/2)
+        );
+
     padding-right:
-        max(30px,calc((100vw - var(--container))/2));
+        max(
+            30px,
+            calc((100vw - var(--container))/2)
+        );
 }
 
 .grade-antes-depois{
     display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
     gap:24px;
 }
 
 .comparacao{
     display:grid;
+
     grid-template-columns:1fr 1fr;
+
     border:1px solid var(--borda);
+
     overflow:hidden;
+
     background:#111;
 }
 
 .comparacao>div{
     position:relative;
+
     min-height:420px;
 }
 
@@ -660,24 +925,36 @@ ul{
 
 .comparacao span{
     position:absolute;
+
     top:16px;
     left:16px;
+
     z-index:2;
+
     padding:7px 12px;
+
     background:rgba(0,0,0,.72);
+
     border:1px solid var(--borda);
+
     color:var(--dourado-claro);
+
     font-size:.66rem;
+
     letter-spacing:.16em;
 }
 
 .comparacao img{
     width:100%;
     height:100%;
+
     object-fit:cover;
+
     object-position:center top;
+
     cursor:zoom-in;
 }
+
 
 /* ==========================================
    GALERIA DE VÍDEOS
@@ -685,37 +962,91 @@ ul{
 
 .videos-galeria{
     max-width:none;
+
     padding-left:
-        max(30px,calc((100vw - var(--container))/2));
+        max(
+            30px,
+            calc((100vw - var(--container))/2)
+        );
+
     padding-right:
-        max(30px,calc((100vw - var(--container))/2));
+        max(
+            30px,
+            calc((100vw - var(--container))/2)
+        );
+
+    padding-top:125px;
+
+    padding-bottom:125px;
+
     background:var(--preto-claro);
 }
 
 .grade-videos{
     display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:24px;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:30px;
+
+    align-items:start;
 }
 
 .video-card{
-    border:1px solid rgba(255,255,255,.08);
-    background:#0d0d0d;
+    width:100%;
+
     overflow:hidden;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:#0d0d0d;
+
+    border-radius:14px;
+
+    box-shadow:
+        0 20px 45px
+        rgba(0,0,0,.25);
 }
 
+
+/* ==========================================
+   CORREÇÃO PRINCIPAL DOS VÍDEOS
+
+   CONTAIN = MOSTRA O VÍDEO INTEIRO
+   SEM CORTAR CABELO, ROSTO OU CORPO
+========================================== */
+
 .video-card video{
+    display:block;
+
     width:100%;
-    aspect-ratio:16/9;
-    object-fit:cover;
+
+    height:620px;
+
+    object-fit:contain;
+
+    object-position:center center;
+
     background:#000;
 }
 
 .video-card h3{
-    padding:18px 20px;
+    padding:20px 22px;
+
     font-family:"Cinzel",serif;
+
     font-weight:500;
+
+    color:var(--gelo);
+
+    text-align:center;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.05);
 }
+
 
 /* ==========================================
    DEPOIMENTOS
@@ -724,38 +1055,55 @@ ul{
 .depoimentos{
     padding:
         125px
-        max(30px,calc((100vw - var(--container))/2));
+        max(
+            30px,
+            calc((100vw - var(--container))/2)
+        );
+
     background:#070707;
 }
 
 .cards-depoimentos{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap:22px;
 }
 
 .depoimento{
     padding:34px;
+
     border:1px solid rgba(255,255,255,.07);
+
     background:rgba(255,255,255,.018);
 }
 
 .estrelas{
     color:var(--dourado);
+
+    letter-spacing:.1em;
 }
 
 .depoimento p{
     margin-top:20px;
+
     color:rgba(244,241,235,.78);
 }
 
 .depoimento h4{
     margin-top:20px;
+
     color:var(--dourado-claro);
+
     font-size:.78rem;
+
     text-transform:uppercase;
+
     letter-spacing:.14em;
 }
+
 
 /* ==========================================
    CHAMADA PARA AGENDAMENTO
@@ -763,10 +1111,15 @@ ul{
 
 .chamada-agendamento{
     position:relative;
+
     min-height:560px;
+
     display:grid;
+
     place-items:center;
+
     padding:100px 30px;
+
     background:
         url("../images/hero-poster.jpg")
         center/cover
@@ -775,20 +1128,27 @@ ul{
 
 .chamada-overlay{
     position:absolute;
+
     inset:0;
+
     background:rgba(5,5,5,.78);
 }
 
 .chamada-conteudo{
     position:relative;
+
     z-index:1;
+
     max-width:760px;
+
     text-align:center;
 }
 
 .chamada-conteudo>span{
     color:var(--dourado-claro);
+
     font-size:.7rem;
+
     letter-spacing:.22em;
 }
 
@@ -798,18 +1158,36 @@ ul{
 
 .chamada-conteudo p{
     margin-top:20px;
+
     color:var(--cinza);
 }
 
 .chamada-conteudo a{
     margin-top:28px;
+
     display:inline-flex;
+
+    align-items:center;
+
     gap:10px;
+
     padding:16px 25px;
+
     background:var(--dourado);
+
     color:#000;
+
     font-weight:600;
+
+    transition:var(--transicao);
 }
+
+.chamada-conteudo a:hover{
+    transform:translateY(-3px);
+
+    background:var(--dourado-claro);
+}
+
 
 /* ==========================================
    RODAPÉ
@@ -817,16 +1195,24 @@ ul{
 
 .footer{
     padding:80px 30px 0;
+
     background:#030303;
+
     border-top:1px solid var(--borda);
 }
 
 .footer-conteudo{
     max-width:var(--container);
+
     margin:auto;
+
     display:grid;
-    grid-template-columns:1.3fr 1fr 1fr;
+
+    grid-template-columns:
+        1.3fr 1fr 1fr;
+
     gap:50px;
+
     padding-bottom:55px;
 }
 
@@ -836,7 +1222,9 @@ ul{
 
 .footer h3{
     color:var(--dourado-claro);
+
     font-family:"Cinzel",serif;
+
     margin-bottom:18px;
 }
 
@@ -844,17 +1232,25 @@ ul{
 .footer a,
 .footer strong{
     color:var(--cinza);
+
     font-size:.82rem;
+}
+
+.footer a:hover{
+    color:var(--dourado-claro);
 }
 
 .footer-info p{
     display:flex;
+
     gap:10px;
+
     margin-bottom:12px;
 }
 
 .footer-info i{
     color:var(--dourado);
+
     margin-top:5px;
 }
 
@@ -864,9 +1260,14 @@ ul{
 
 .footer-copy{
     text-align:center;
-    border-top:1px solid rgba(255,255,255,.06);
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.06);
+
     padding:20px;
 }
+
 
 /* ==========================================
    BOTÕES FLUTUANTES
@@ -874,39 +1275,60 @@ ul{
 
 .botoes-flutuantes{
     position:fixed;
+
     right:20px;
     bottom:20px;
+
     z-index:900;
+
     display:flex;
+
     flex-direction:column;
+
     gap:10px;
 }
 
 .botoes-flutuantes a{
     width:54px;
     height:54px;
+
     border-radius:50%;
+
     display:grid;
+
     place-items:center;
+
     color:#fff;
+
     font-size:1.5rem;
-    box-shadow:0 12px 28px rgba(0,0,0,.35);
+
+    box-shadow:
+        0 12px 28px
+        rgba(0,0,0,.35);
+
     transition:
         transform var(--transicao),
         box-shadow var(--transicao);
 }
 
 .botoes-flutuantes a:hover{
-    transform:translateY(-3px) scale(1.04);
+    transform:
+        translateY(-3px)
+        scale(1.04);
+
+    box-shadow:
+        0 16px 35px
+        rgba(0,0,0,.45);
 }
 
 .instagram-fixo{
-    background:linear-gradient(
-        135deg,
-        #833ab4,
-        #fd1d1d,
-        #fcb045
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #833ab4,
+            #fd1d1d,
+            #fcb045
+        );
 }
 
 .whatsapp-fixo{
@@ -915,32 +1337,49 @@ ul{
 
 .voltar-topo{
     background:#111;
+
     border:1px solid var(--borda);
+
     color:var(--dourado-claro)!important;
+
     opacity:0;
+
     visibility:hidden;
+
+    transition:var(--transicao);
 }
 
 .voltar-topo.visivel{
     opacity:1;
+
     visibility:visible;
 }
 
+
 /* ==========================================
-   LIGHTBOX - FOTO GRANDE
+   LIGHTBOX
+   FOTO ABERTA EM TELA GRANDE
 ========================================== */
 
 .lightbox{
     position:fixed;
+
     inset:0;
+
     z-index:99999;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     padding:30px;
+
     background:rgba(0,0,0,.95);
 
     opacity:0;
+
     visibility:hidden;
 
     transition:
@@ -950,36 +1389,49 @@ ul{
 
 .lightbox.ativo{
     opacity:1;
+
     visibility:visible;
 }
 
 .lightbox img{
     display:block;
+
     width:auto;
+
     height:auto;
+
     max-width:92vw;
+
     max-height:90vh;
+
     object-fit:contain;
 
-    border:1px solid rgba(201,164,92,.4);
+    border:
+        1px solid
+        rgba(201,164,92,.4);
 
     box-shadow:
-        0 25px 90px rgba(0,0,0,.8);
+        0 25px 90px
+        rgba(0,0,0,.8);
 }
 
 .lightbox-fechar{
     position:absolute;
+
     top:22px;
     right:28px;
+
     z-index:2;
 
     width:52px;
     height:52px;
 
     display:grid;
+
     place-items:center;
 
     border:1px solid var(--dourado);
+
     border-radius:50%;
 
     background:rgba(5,5,5,.88);
@@ -987,7 +1439,9 @@ ul{
     color:var(--dourado-claro);
 
     font-family:Arial,sans-serif;
+
     font-size:30px;
+
     line-height:1;
 
     cursor:pointer;
@@ -997,8 +1451,10 @@ ul{
 
 .lightbox-fechar:hover{
     background:var(--dourado);
+
     color:#000;
 }
+
 
 /* ==========================================
    ANIMAÇÕES
@@ -1006,14 +1462,18 @@ ul{
 
 .animar{
     opacity:0;
+
     transform:translateY(28px);
+
     transition:.7s;
 }
 
 .animar.visivel{
     opacity:1;
+
     transform:none;
 }
+
 
 /* ==========================================
    TABLET
@@ -1027,6 +1487,7 @@ ul{
 
     .menu-toggle{
         display:block;
+
         z-index:1002;
     }
 
@@ -1036,20 +1497,27 @@ ul{
 
     #menu-principal.aberto{
         display:grid;
+
         position:fixed;
+
         inset:0;
+
         place-items:center;
+
         background:rgba(5,5,5,.98);
+
         z-index:1001;
     }
 
     #menu-principal.aberto ul{
         flex-direction:column;
+
         text-align:center;
     }
 
     #menu-principal.aberto a{
         font-family:"Cinzel",serif;
+
         font-size:1.25rem;
     }
 
@@ -1058,7 +1526,8 @@ ul{
     }
 
     .cards-servicos-com-foto{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
     .cards-depoimentos{
@@ -1066,13 +1535,29 @@ ul{
     }
 
     .footer-conteudo{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:
+            1fr 1fr;
     }
 
     .grade-antes-depois{
         grid-template-columns:1fr;
     }
+
+    .grade-videos{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+        gap:20px;
+    }
+
+    .video-card video{
+        height:560px;
+
+        object-fit:contain;
+    }
+
 }
+
 
 /* ==========================================
    CELULAR
@@ -1082,52 +1567,70 @@ ul{
 
     .cabecalho-premium{
         min-height:74px;
+
         padding:0 20px;
+
         background:rgba(5,5,5,.84);
+
         backdrop-filter:blur(14px);
+
+        -webkit-backdrop-filter:blur(14px);
     }
+
+
+    /* ======================================
+       BANNER NO CELULAR
+    ====================================== */
 
     .hero{
         min-height:100svh;
-        padding:110px 20px 54px;
+
+        padding:
+            110px
+            20px
+            54px;
+
         align-items:flex-end;
     }
 
-    /*
-       O VÍDEO VERTICAL DO CELULAR
-       PREENCHE A TELA SEM DEFORMAR.
-    */
-
     .hero-video-fundo video{
         width:100%;
+
         height:100%;
+
         object-fit:cover;
+
         object-position:center center;
     }
 
     .hero-overlay{
-        background:linear-gradient(
-            180deg,
-            rgba(0,0,0,.18) 0%,
-            rgba(0,0,0,.42) 38%,
-            rgba(0,0,0,.94) 80%,
-            #050505 100%
-        );
+        background:
+            linear-gradient(
+                180deg,
+                rgba(0,0,0,.18) 0%,
+                rgba(0,0,0,.42) 38%,
+                rgba(0,0,0,.94) 80%,
+                #050505 100%
+            );
     }
 
     .hero-brilho{
         left:-30%;
+
         top:10%;
+
         width:500px;
+
         height:500px;
     }
 
     .hero h1{
-        font-size:clamp(
-            2.3rem,
-            12vw,
-            3.7rem
-        );
+        font-size:
+            clamp(
+                2.3rem,
+                12vw,
+                3.7rem
+            );
     }
 
     .hero-descricao{
@@ -1140,25 +1643,37 @@ ul{
 
     .hero-btn{
         width:100%;
+
         justify-content:center;
     }
 
     .hero-destaques{
         display:grid;
+
         grid-template-columns:1fr;
+
         gap:12px;
+
         margin-top:34px;
     }
 
     .hero-linha{
         height:1px;
+
         width:100%;
-        background:linear-gradient(
-            90deg,
-            var(--borda),
-            transparent
-        );
+
+        background:
+            linear-gradient(
+                90deg,
+                var(--borda),
+                transparent
+            );
     }
+
+
+    /* ======================================
+       ESPAÇAMENTO DAS SEÇÕES
+    ====================================== */
 
     .sobre,
     .portfolio,
@@ -1166,6 +1681,11 @@ ul{
     .videos-galeria{
         padding:90px 20px;
     }
+
+
+    /* ======================================
+       SOBRE
+    ====================================== */
 
     .sobre-imagem img{
         min-height:450px;
@@ -1175,6 +1695,11 @@ ul{
         grid-template-columns:1fr;
     }
 
+
+    /* ======================================
+       SERVIÇOS
+    ====================================== */
+
     .cards-servicos-com-foto{
         grid-template-columns:1fr;
     }
@@ -1183,16 +1708,18 @@ ul{
         min-height:0;
     }
 
-    /*
-       FOTO DOS SERVIÇOS NO CELULAR
-       FICA AINDA MAIOR.
-    */
-
     .card-servico-foto img{
         height:460px;
+
         object-fit:cover;
+
         object-position:center top;
     }
+
+
+    /* ======================================
+       PORTFÓLIO
+    ====================================== */
 
     .galeria-automatica{
         grid-template-columns:1fr;
@@ -1202,9 +1729,10 @@ ul{
         height:460px;
     }
 
-    .grade-videos{
-        grid-template-columns:1fr;
-    }
+
+    /* ======================================
+       ANTES E DEPOIS
+    ====================================== */
 
     .comparacao{
         grid-template-columns:1fr;
@@ -1216,22 +1744,81 @@ ul{
 
     .comparacao>div+div{
         border-left:0;
-        border-top:1px solid var(--dourado);
+
+        border-top:
+            1px solid
+            var(--dourado);
     }
+
+
+    /* ======================================
+       GALERIA DE VÍDEOS NO CELULAR
+    ====================================== */
+
+    .grade-videos{
+        grid-template-columns:1fr;
+
+        gap:25px;
+    }
+
+    .video-card{
+        width:100%;
+    }
+
+    .video-card video{
+        width:100%;
+
+        height:auto;
+
+        max-height:78vh;
+
+        aspect-ratio:9 / 16;
+
+        object-fit:contain;
+
+        object-position:center center;
+
+        background:#000;
+    }
+
+    .video-card h3{
+        padding:18px 15px;
+
+        font-size:1rem;
+
+        text-align:center;
+    }
+
+
+    /* ======================================
+       RODAPÉ
+    ====================================== */
 
     .footer-conteudo{
         grid-template-columns:1fr;
     }
 
+
+    /* ======================================
+       BOTÕES FLUTUANTES
+    ====================================== */
+
     .botoes-flutuantes{
         right:14px;
+
         bottom:14px;
     }
 
     .botoes-flutuantes a{
         width:50px;
+
         height:50px;
     }
+
+
+    /* ======================================
+       LIGHTBOX
+    ====================================== */
 
     .lightbox{
         padding:15px;
@@ -1239,17 +1826,24 @@ ul{
 
     .lightbox img{
         max-width:96vw;
+
         max-height:88vh;
     }
 
     .lightbox-fechar{
         top:14px;
+
         right:14px;
+
         width:46px;
+
         height:46px;
+
         font-size:26px;
     }
+
 }
+
 
 /* ==========================================
    CELULARES PEQUENOS
@@ -1267,22 +1861,21 @@ ul{
 
     .hero-etiqueta{
         font-size:.58rem;
+
         letter-spacing:.14em;
     }
 
     .sobre-selo{
         right:-5px;
+
         width:105px;
+
         height:105px;
     }
 
-    /*
-       Mantém o rosto e o cabelo maiores
-       mesmo em aparelhos pequenos.
-    */
-
     .card-servico-foto img{
         height:420px;
+
         object-position:center top;
     }
 
@@ -1290,11 +1883,29 @@ ul{
         height:420px;
     }
 
+
+    /* ======================================
+       VÍDEO VERTICAL INTEIRO
+    ====================================== */
+
     .video-card video{
-        aspect-ratio:9/16;
-        object-fit:cover;
+        width:100%;
+
+        height:auto;
+
+        max-height:75vh;
+
+        aspect-ratio:9 / 16;
+
+        object-fit:contain;
+
+        object-position:center center;
+
+        background:#000;
     }
+
 }
+
 
 /* ==========================================
    ACESSIBILIDADE
@@ -1310,6 +1921,8 @@ ul{
     *:before,
     *:after{
         animation:none!important;
+
         transition:none!important;
     }
+
 }
