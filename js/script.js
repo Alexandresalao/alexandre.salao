@@ -88,18 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
-
-        document.addEventListener(
-            "keydown",
-            (evento) => {
-
-                if (evento.key === "Escape") {
-                    fecharMenu();
-                }
-
-            }
-        );
-
     }
 
 
@@ -321,6 +309,12 @@ document.addEventListener("DOMContentLoaded", () => {
                             "href"
                         );
 
+
+                    if (!id || id === "#") {
+                        return;
+                    }
+
+
                     const destino =
                         document.querySelector(
                             id
@@ -342,6 +336,270 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
         });
+
+
+    /* ==========================================
+       LIGHTBOX
+       ABRIR FOTOS EM TELA GRANDE
+    ========================================== */
+
+    const lightbox =
+        document.querySelector("#lightbox");
+
+    const lightboxImagem =
+        document.querySelector("#lightbox-imagem");
+
+    const lightboxFechar =
+        document.querySelector(".lightbox-fechar");
+
+
+    /*
+       Seleciona as imagens que poderão
+       ser ampliadas.
+
+       1 - Fotos dos serviços
+       2 - Fotos do portfólio
+       3 - Fotos de antes e depois
+    */
+
+    const imagensAmpliaveis =
+        document.querySelectorAll(
+            ".card-servico-foto img, " +
+            ".foto img, " +
+            ".comparacao img"
+        );
+
+
+    const abrirLightbox = (imagem) => {
+
+        if (!lightbox || !lightboxImagem) {
+            return;
+        }
+
+
+        lightboxImagem.src =
+            imagem.currentSrc || imagem.src;
+
+        lightboxImagem.alt =
+            imagem.alt || "Imagem ampliada";
+
+
+        lightbox.classList.add(
+            "ativo"
+        );
+
+
+        lightbox.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+
+        body.style.overflow =
+            "hidden";
+
+    };
+
+
+    const fecharLightbox = () => {
+
+        if (!lightbox) {
+            return;
+        }
+
+
+        lightbox.classList.remove(
+            "ativo"
+        );
+
+
+        lightbox.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+
+        body.style.overflow =
+            "";
+
+
+        /*
+           Aguarda a animação terminar
+           antes de remover a imagem.
+        */
+
+        setTimeout(() => {
+
+            if (
+                lightboxImagem &&
+                !lightbox.classList.contains(
+                    "ativo"
+                )
+            ) {
+
+                lightboxImagem.src = "";
+
+            }
+
+        }, 300);
+
+    };
+
+
+    imagensAmpliaveis.forEach(
+        (imagem) => {
+
+            /*
+               Indica que a imagem
+               pode ser clicada.
+            */
+
+            imagem.setAttribute(
+                "tabindex",
+                "0"
+            );
+
+
+            imagem.setAttribute(
+                "role",
+                "button"
+            );
+
+
+            imagem.setAttribute(
+                "aria-label",
+                imagem.alt
+                    ? "Ampliar imagem: " +
+                      imagem.alt
+                    : "Ampliar imagem"
+            );
+
+
+            /*
+               Clique ou toque.
+            */
+
+            imagem.addEventListener(
+                "click",
+                () => {
+
+                    abrirLightbox(
+                        imagem
+                    );
+
+                }
+            );
+
+
+            /*
+               Também permite abrir
+               pelo teclado.
+            */
+
+            imagem.addEventListener(
+                "keydown",
+                (evento) => {
+
+                    if (
+                        evento.key === "Enter" ||
+                        evento.key === " "
+                    ) {
+
+                        evento.preventDefault();
+
+                        abrirLightbox(
+                            imagem
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+    /*
+       Botão X.
+    */
+
+    if (lightboxFechar) {
+
+        lightboxFechar.addEventListener(
+            "click",
+            fecharLightbox
+        );
+
+    }
+
+
+    /*
+       Clicar no fundo preto
+       também fecha.
+    */
+
+    if (lightbox) {
+
+        lightbox.addEventListener(
+            "click",
+            (evento) => {
+
+                if (
+                    evento.target ===
+                    lightbox
+                ) {
+
+                    fecharLightbox();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* ==========================================
+       TECLA ESC
+    ========================================== */
+
+    document.addEventListener(
+        "keydown",
+        (evento) => {
+
+            if (
+                evento.key === "Escape"
+            ) {
+
+                /*
+                   Primeiro fecha a foto,
+                   caso esteja aberta.
+                */
+
+                if (
+                    lightbox &&
+                    lightbox.classList.contains(
+                        "ativo"
+                    )
+                ) {
+
+                    fecharLightbox();
+
+                }
+
+
+                /*
+                   Também fecha o menu
+                   do celular.
+                */
+
+                fecharMenu();
+
+            }
+
+        }
+    );
 
 
     /* ==========================================
@@ -368,7 +626,8 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    /* Segurança:
+    /*
+       Segurança:
        remove a tela de carregamento
        mesmo se algum arquivo demorar.
     */
