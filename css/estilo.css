@@ -8,18 +8,18 @@
     --cinza:#aaa59c;
     --borda:rgba(201,164,92,.22);
     --transicao:.35s ease;
-    --container:1180px
+    --container:1180px;
 }
 
 *{
     margin:0;
     padding:0;
-    box-sizing:border-box
+    box-sizing:border-box;
 }
 
 html{
     scroll-behavior:smooth;
-    scroll-padding-top:90px
+    scroll-padding-top:90px;
 }
 
 body{
@@ -27,31 +27,31 @@ body{
     color:var(--gelo);
     font-family:"Poppins",sans-serif;
     overflow-x:hidden;
-    line-height:1.7
+    line-height:1.7;
 }
 
 body.menu-aberto{
-    overflow:hidden
+    overflow:hidden;
 }
 
 img,
 video{
     display:block;
-    max-width:100%
+    max-width:100%;
 }
 
 a{
     color:inherit;
-    text-decoration:none
+    text-decoration:none;
 }
 
 ul{
-    list-style:none
+    list-style:none;
 }
 
 ::selection{
     background:var(--dourado);
-    color:#000
+    color:#000;
 }
 
 /* ==========================================
@@ -65,12 +65,12 @@ ul{
     display:grid;
     place-items:center;
     background:var(--preto);
-    transition:.6s
+    transition:.6s;
 }
 
 .preloader.oculto{
     opacity:0;
-    visibility:hidden
+    visibility:hidden;
 }
 
 .preloader-marca{
@@ -82,7 +82,7 @@ ul{
     place-items:center;
     color:var(--dourado-claro);
     font-family:"Cinzel",serif;
-    letter-spacing:.2em
+    letter-spacing:.2em;
 }
 
 /* ==========================================
@@ -101,50 +101,50 @@ ul{
     justify-content:space-between;
     gap:24px;
     padding:0 5vw;
-    transition:var(--transicao)
+    transition:var(--transicao);
 }
 
 .cabecalho-premium.rolado{
     min-height:74px;
     background:rgba(5,5,5,.92);
     border-bottom:1px solid var(--borda);
-    backdrop-filter:blur(18px)
+    backdrop-filter:blur(18px);
 }
 
 .logo{
     display:flex;
     flex-direction:column;
-    line-height:1
+    line-height:1;
 }
 
 .logo-principal{
     font-family:"Cinzel",serif;
     letter-spacing:.22em;
-    font-weight:600
+    font-weight:600;
 }
 
 .logo-secundaria{
     margin-top:7px;
     color:var(--dourado);
     font-size:.62rem;
-    letter-spacing:.48em
+    letter-spacing:.48em;
 }
 
 #menu-principal ul{
     display:flex;
-    gap:clamp(14px,2vw,30px)
+    gap:clamp(14px,2vw,30px);
 }
 
 #menu-principal a{
     font-size:.72rem;
     letter-spacing:.08em;
     text-transform:uppercase;
-    color:rgba(244,241,235,.82)
+    color:rgba(244,241,235,.82);
 }
 
 #menu-principal a:hover,
 #menu-principal a.ativo{
-    color:var(--dourado-claro)
+    color:var(--dourado-claro);
 }
 
 .btn-whatsapp{
@@ -152,7 +152,7 @@ ul{
     border:1px solid var(--dourado);
     color:var(--dourado-claro);
     font-size:.72rem;
-    text-transform:uppercase
+    text-transform:uppercase;
 }
 
 .menu-toggle{
@@ -160,7 +160,7 @@ ul{
     width:46px;
     height:46px;
     border:1px solid var(--borda);
-    background:transparent
+    background:transparent;
 }
 
 .menu-toggle span{
@@ -169,19 +169,19 @@ ul{
     height:1px;
     background:#fff;
     margin:6px auto;
-    transition:.3s
+    transition:.3s;
 }
 
 .menu-toggle.ativo span:nth-child(1){
-    transform:translateY(7px) rotate(45deg)
+    transform:translateY(7px) rotate(45deg);
 }
 
 .menu-toggle.ativo span:nth-child(2){
-    opacity:0
+    opacity:0;
 }
 
 .menu-toggle.ativo span:nth-child(3){
-    transform:translateY(-7px) rotate(-45deg)
+    transform:translateY(-7px) rotate(-45deg);
 }
 
 /* ==========================================
@@ -196,20 +196,20 @@ ul{
     overflow:hidden;
     isolation:isolate;
     padding:150px 7vw 120px;
-    background:#000
+    background:#000;
 }
 
 .hero-video-fundo{
     position:absolute;
     inset:0;
-    z-index:0
+    z-index:0;
 }
 
 .hero-video-fundo video{
     width:100%;
     height:100%;
     object-fit:cover;
-    object-position:center center
+    object-position:center center;
 }
 
 .hero-overlay{
@@ -228,7 +228,7 @@ ul{
             180deg,
             rgba(0,0,0,.12),
             rgba(0,0,0,.88)
-        )
+        );
 }
 
 .hero-brilho{
@@ -245,20 +245,20 @@ ul{
             rgba(201,164,92,.17),
             transparent 70%
         );
-    filter:blur(18px)
+    filter:blur(18px);
 }
 
 .hero-conteudo{
     position:relative;
     z-index:3;
-    width:min(760px,100%)
+    width:min(760px,100%);
 }
 
 .hero-etiqueta{
     color:var(--dourado-claro);
     font-size:.72rem;
     letter-spacing:.22em;
-    text-transform:uppercase
+    text-transform:uppercase;
 }
 
 .hero h1{
@@ -266,100 +266,104 @@ ul{
     font-family:"Cinzel",serif;
     font-size:clamp(2.8rem,6vw,6.4rem);
     font-weight:500;
-    line-height:1.04
+    line-height:1.04;
 }
 
 .hero h1 span{
-    color:var(--dourado-claro)
+    color:var(--dourado-claro);
 }
 
 .hero-descricao{
     max-width:640px;
     margin-top:26px;
-    color:rgba(244,241,235,.72)
+    color:rgba(244,241,235,.72);
 }
 
 .hero-botoes{
     display:flex;
     flex-wrap:wrap;
     gap:16px;
-    margin-top:36px
+    margin-top:36px;
 }
 
 .hero-btn{
     min-height:54px;
     display:inline-flex;
     align-items:center;
+    justify-content:center;
     padding:0 28px;
     border:1px solid var(--dourado);
     font-size:.76rem;
     text-transform:uppercase;
-    letter-spacing:.1em
+    letter-spacing:.1em;
+    transition:var(--transicao);
+}
+
+.hero-btn:hover{
+    transform:translateY(-3px);
 }
 
 .hero-btn-principal{
-    background:
-        linear-gradient(
-            110deg,
-            #8b6b32,
-            var(--dourado-claro)
-        );
-    color:#000
+    background:linear-gradient(
+        110deg,
+        #8b6b32,
+        var(--dourado-claro)
+    );
+    color:#000;
 }
 
 .hero-btn-secundario{
     color:#fff;
-    background:rgba(255,255,255,.03)
+    background:rgba(255,255,255,.03);
 }
 
 .hero-destaques{
     display:flex;
     gap:26px;
     align-items:stretch;
-    margin-top:52px
+    margin-top:52px;
 }
 
 .hero-destaque{
     display:flex;
-    flex-direction:column
+    flex-direction:column;
 }
 
 .hero-destaque strong{
-    font-family:"Cinzel",serif
+    font-family:"Cinzel",serif;
 }
 
 .hero-destaque span{
     max-width:160px;
     color:rgba(244,241,235,.5);
     font-size:.68rem;
-    text-transform:uppercase
+    text-transform:uppercase;
 }
 
 .hero-linha{
     width:1px;
-    background:
-        linear-gradient(
-            transparent,
-            var(--borda),
-            transparent
-        )
+    background:linear-gradient(
+        transparent,
+        var(--borda),
+        transparent
+    );
 }
 
 /* ==========================================
-   TÍTULOS DAS SEÇÕES
+   TÍTULOS
 ========================================== */
 
 .titulo-secao{
     width:min(760px,100%);
     margin:0 auto 58px;
-    text-align:center
+    text-align:center;
 }
 
 .titulo-secao h5,
 .sobre-texto h5{
     color:var(--dourado);
     font-size:.72rem;
-    letter-spacing:.24em
+    letter-spacing:.24em;
 }
 
 .titulo-secao h2,
@@ -368,12 +372,12 @@ ul{
     font-family:"Cinzel",serif;
     font-size:clamp(2rem,4vw,4rem);
     font-weight:500;
-    line-height:1.2
+    line-height:1.2;
 }
 
 .titulo-secao p{
     margin-top:18px;
-    color:var(--cinza)
+    color:var(--cinza);
 }
 
 /* ==========================================
@@ -387,18 +391,18 @@ ul{
     display:grid;
     grid-template-columns:.92fr 1.08fr;
     gap:80px;
-    align-items:center
+    align-items:center;
 }
 
 .sobre-imagem{
-    position:relative
+    position:relative;
 }
 
 .sobre-imagem img{
     width:100%;
     min-height:590px;
     object-fit:cover;
-    object-position:center top
+    object-position:center top;
 }
 
 .sobre-imagem:before{
@@ -406,7 +410,7 @@ ul{
     position:absolute;
     inset:18px -18px -18px 18px;
     border:1px solid var(--borda);
-    z-index:-1
+    z-index:-1;
 }
 
 .sobre-selo{
@@ -420,50 +424,50 @@ ul{
     display:grid;
     place-content:center;
     text-align:center;
-    background:rgba(5,5,5,.9)
+    background:rgba(5,5,5,.9);
 }
 
 .sobre-selo span{
     font-size:.6rem;
-    letter-spacing:.2em
+    letter-spacing:.2em;
 }
 
 .sobre-selo strong{
     font-family:"Cinzel",serif;
     color:var(--dourado-claro);
-    font-size:1.35rem
+    font-size:1.35rem;
 }
 
 .sobre-texto h2{
-    margin-top:12px
+    margin-top:12px;
 }
 
 .sobre-texto h2 span{
-    color:var(--dourado-claro)
+    color:var(--dourado-claro);
 }
 
 .sobre-texto>p{
     margin-top:24px;
-    color:var(--cinza)
+    color:var(--cinza);
 }
 
 .sobre-texto ul{
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:13px 20px;
-    margin-top:30px
+    margin-top:30px;
 }
 
 .sobre-texto li{
     display:flex;
     gap:10px;
     font-size:.84rem;
-    color:rgba(244,241,235,.8)
+    color:rgba(244,241,235,.8);
 }
 
 .sobre-texto i{
     color:var(--dourado);
-    margin-top:5px
+    margin-top:5px;
 }
 
 /* ==========================================
@@ -473,59 +477,76 @@ ul{
 .servicos{
     padding:
         125px
-        max(
-            30px,
-            calc((100vw - var(--container))/2)
-        );
-    background:var(--preto-claro)
+        max(30px,calc((100vw - var(--container))/2));
+    background:var(--preto-claro);
 }
 
 .cards-servicos-com-foto{
     display:grid;
-    grid-template-columns:
-        repeat(3,minmax(0,1fr));
-    gap:22px
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:26px;
 }
 
 .card-servico-foto{
     position:relative;
     overflow:hidden;
-    min-height:410px;
+    min-height:570px;
     border:1px solid rgba(255,255,255,.07);
-    background:#111
+    background:#111;
+    transition:
+        transform .4s ease,
+        border-color .4s ease,
+        box-shadow .4s ease;
 }
+
+.card-servico-foto:hover{
+    transform:translateY(-5px);
+    border-color:rgba(201,164,92,.45);
+    box-shadow:0 24px 50px rgba(0,0,0,.28);
+}
+
+/*
+   IMPORTANTE:
+   A FOTO AGORA TEM 390px.
+   Isso permite mostrar muito mais do rosto e cabelo.
+*/
 
 .card-servico-foto img{
     width:100%;
-    height:250px;
+    height:390px;
     object-fit:cover;
-    transition:.6s
+    object-position:center top;
+    cursor:zoom-in;
+    transition:
+        transform .65s ease,
+        filter .65s ease;
 }
 
 .card-servico-foto:hover img{
-    transform:scale(1.05)
+    transform:scale(1.035);
+    filter:brightness(1.04) contrast(1.02);
 }
 
 .card-servico-conteudo{
-    padding:24px
+    padding:25px 24px 28px;
 }
 
 .card-servico-conteudo>span{
     color:var(--dourado);
     font-size:.68rem;
-    letter-spacing:.16em
+    letter-spacing:.16em;
 }
 
 .card-servico-conteudo h3{
     margin-top:8px;
     font-family:"Cinzel",serif;
-    font-size:1.15rem
+    font-size:1.15rem;
 }
 
 .card-servico-conteudo p{
     margin-top:10px;
     color:var(--cinza);
-    font-size:.84rem
+    font-size:.84rem;
 }
 
 /* ==========================================
@@ -537,17 +558,14 @@ ul{
 .videos-galeria{
     max-width:calc(var(--container) + 60px);
     margin:auto;
-    padding:125px 30px
+    padding:125px 30px;
 }
 
 .galeria-automatica{
     display:grid;
     grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(280px,1fr)
-        );
-    gap:20px
+        repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
 }
 
 .foto{
@@ -555,30 +573,32 @@ ul{
     overflow:hidden;
     height:420px;
     background:var(--grafite);
-    border-radius:14px
+    border-radius:14px;
+    cursor:zoom-in;
 }
 
 .foto:after{
     content:"";
     position:absolute;
     inset:0;
-    background:
-        linear-gradient(
-            180deg,
-            transparent 45%,
-            rgba(0,0,0,.88)
-        )
+    pointer-events:none;
+    background:linear-gradient(
+        180deg,
+        transparent 45%,
+        rgba(0,0,0,.88)
+    );
 }
 
 .foto img{
     width:100%;
     height:100%;
     object-fit:cover;
-    transition:.6s
+    object-position:center top;
+    transition:.6s;
 }
 
 .foto:hover img{
-    transform:scale(1.06)
+    transform:scale(1.06);
 }
 
 .foto figcaption{
@@ -589,44 +609,36 @@ ul{
     z-index:2;
     display:flex;
     gap:12px;
-    align-items:center
+    align-items:center;
+    pointer-events:none;
 }
 
 .foto figcaption span{
     color:var(--dourado);
-    font-size:.68rem
+    font-size:.68rem;
 }
 
 .foto figcaption strong{
-    font-family:"Cinzel",serif
+    font-family:"Cinzel",serif;
 }
 
 /* ==========================================
-   GALERIA ANTES E DEPOIS
+   ANTES E DEPOIS
 ========================================== */
 
 .antes-depois{
     background:#080808;
     max-width:none;
-
     padding-left:
-        max(
-            30px,
-            calc((100vw - var(--container))/2)
-        );
-
+        max(30px,calc((100vw - var(--container))/2));
     padding-right:
-        max(
-            30px,
-            calc((100vw - var(--container))/2)
-        )
+        max(30px,calc((100vw - var(--container))/2));
 }
 
 .grade-antes-depois{
     display:grid;
-    grid-template-columns:
-        repeat(2,minmax(0,1fr));
-    gap:24px
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:24px;
 }
 
 .comparacao{
@@ -634,16 +646,16 @@ ul{
     grid-template-columns:1fr 1fr;
     border:1px solid var(--borda);
     overflow:hidden;
-    background:#111
+    background:#111;
 }
 
 .comparacao>div{
     position:relative;
-    min-height:420px
+    min-height:420px;
 }
 
 .comparacao>div+div{
-    border-left:1px solid var(--dourado)
+    border-left:1px solid var(--dourado);
 }
 
 .comparacao span{
@@ -656,13 +668,15 @@ ul{
     border:1px solid var(--borda);
     color:var(--dourado-claro);
     font-size:.66rem;
-    letter-spacing:.16em
+    letter-spacing:.16em;
 }
 
 .comparacao img{
     width:100%;
     height:100%;
-    object-fit:cover
+    object-fit:cover;
+    object-position:center top;
+    cursor:zoom-in;
 }
 
 /* ==========================================
@@ -671,46 +685,36 @@ ul{
 
 .videos-galeria{
     max-width:none;
-
     padding-left:
-        max(
-            30px,
-            calc((100vw - var(--container))/2)
-        );
-
+        max(30px,calc((100vw - var(--container))/2));
     padding-right:
-        max(
-            30px,
-            calc((100vw - var(--container))/2)
-        );
-
-    background:var(--preto-claro)
+        max(30px,calc((100vw - var(--container))/2));
+    background:var(--preto-claro);
 }
 
 .grade-videos{
     display:grid;
-    grid-template-columns:
-        repeat(2,minmax(0,1fr));
-    gap:24px
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:24px;
 }
 
 .video-card{
     border:1px solid rgba(255,255,255,.08);
     background:#0d0d0d;
-    overflow:hidden
+    overflow:hidden;
 }
 
 .video-card video{
     width:100%;
     aspect-ratio:16/9;
     object-fit:cover;
-    background:#000
+    background:#000;
 }
 
 .video-card h3{
     padding:18px 20px;
     font-family:"Cinzel",serif;
-    font-weight:500
+    font-weight:500;
 }
 
 /* ==========================================
@@ -720,32 +724,29 @@ ul{
 .depoimentos{
     padding:
         125px
-        max(
-            30px,
-            calc((100vw - var(--container))/2)
-        );
-    background:#070707
+        max(30px,calc((100vw - var(--container))/2));
+    background:#070707;
 }
 
 .cards-depoimentos{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:22px
+    gap:22px;
 }
 
 .depoimento{
     padding:34px;
     border:1px solid rgba(255,255,255,.07);
-    background:rgba(255,255,255,.018)
+    background:rgba(255,255,255,.018);
 }
 
 .estrelas{
-    color:var(--dourado)
+    color:var(--dourado);
 }
 
 .depoimento p{
     margin-top:20px;
-    color:rgba(244,241,235,.78)
+    color:rgba(244,241,235,.78);
 }
 
 .depoimento h4{
@@ -753,7 +754,7 @@ ul{
     color:var(--dourado-claro);
     font-size:.78rem;
     text-transform:uppercase;
-    letter-spacing:.14em
+    letter-spacing:.14em;
 }
 
 /* ==========================================
@@ -769,35 +770,35 @@ ul{
     background:
         url("../images/hero-poster.jpg")
         center/cover
-        no-repeat
+        no-repeat;
 }
 
 .chamada-overlay{
     position:absolute;
     inset:0;
-    background:rgba(5,5,5,.78)
+    background:rgba(5,5,5,.78);
 }
 
 .chamada-conteudo{
     position:relative;
     z-index:1;
     max-width:760px;
-    text-align:center
+    text-align:center;
 }
 
 .chamada-conteudo>span{
     color:var(--dourado-claro);
     font-size:.7rem;
-    letter-spacing:.22em
+    letter-spacing:.22em;
 }
 
 .chamada-conteudo h2{
-    margin-top:16px
+    margin-top:16px;
 }
 
 .chamada-conteudo p{
     margin-top:20px;
-    color:var(--cinza)
+    color:var(--cinza);
 }
 
 .chamada-conteudo a{
@@ -807,7 +808,7 @@ ul{
     padding:16px 25px;
     background:var(--dourado);
     color:#000;
-    font-weight:600
+    font-weight:600;
 }
 
 /* ==========================================
@@ -817,55 +818,54 @@ ul{
 .footer{
     padding:80px 30px 0;
     background:#030303;
-    border-top:1px solid var(--borda)
+    border-top:1px solid var(--borda);
 }
 
 .footer-conteudo{
     max-width:var(--container);
     margin:auto;
     display:grid;
-    grid-template-columns:
-        1.3fr 1fr 1fr;
+    grid-template-columns:1.3fr 1fr 1fr;
     gap:50px;
-    padding-bottom:55px
+    padding-bottom:55px;
 }
 
 .footer h2{
-    font-family:"Cinzel",serif
+    font-family:"Cinzel",serif;
 }
 
 .footer h3{
     color:var(--dourado-claro);
     font-family:"Cinzel",serif;
-    margin-bottom:18px
+    margin-bottom:18px;
 }
 
 .footer p,
 .footer a,
 .footer strong{
     color:var(--cinza);
-    font-size:.82rem
+    font-size:.82rem;
 }
 
 .footer-info p{
     display:flex;
     gap:10px;
-    margin-bottom:12px
+    margin-bottom:12px;
 }
 
 .footer-info i{
     color:var(--dourado);
-    margin-top:5px
+    margin-top:5px;
 }
 
 .footer-horario p{
-    margin-top:12px
+    margin-top:12px;
 }
 
 .footer-copy{
     text-align:center;
     border-top:1px solid rgba(255,255,255,.06);
-    padding:20px
+    padding:20px;
 }
 
 /* ==========================================
@@ -879,7 +879,7 @@ ul{
     z-index:900;
     display:flex;
     flex-direction:column;
-    gap:10px
+    gap:10px;
 }
 
 .botoes-flutuantes a{
@@ -890,23 +890,27 @@ ul{
     place-items:center;
     color:#fff;
     font-size:1.5rem;
-    box-shadow:
-        0 12px 28px
-        rgba(0,0,0,.35)
+    box-shadow:0 12px 28px rgba(0,0,0,.35);
+    transition:
+        transform var(--transicao),
+        box-shadow var(--transicao);
+}
+
+.botoes-flutuantes a:hover{
+    transform:translateY(-3px) scale(1.04);
 }
 
 .instagram-fixo{
-    background:
-        linear-gradient(
-            135deg,
-            #833ab4,
-            #fd1d1d,
-            #fcb045
-        )
+    background:linear-gradient(
+        135deg,
+        #833ab4,
+        #fd1d1d,
+        #fcb045
+    );
 }
 
 .whatsapp-fixo{
-    background:#25d366
+    background:#25d366;
 }
 
 .voltar-topo{
@@ -914,12 +918,86 @@ ul{
     border:1px solid var(--borda);
     color:var(--dourado-claro)!important;
     opacity:0;
-    visibility:hidden
+    visibility:hidden;
 }
 
 .voltar-topo.visivel{
     opacity:1;
-    visibility:visible
+    visibility:visible;
+}
+
+/* ==========================================
+   LIGHTBOX - FOTO GRANDE
+========================================== */
+
+.lightbox{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:30px;
+    background:rgba(0,0,0,.95);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:
+        opacity .3s ease,
+        visibility .3s ease;
+}
+
+.lightbox.ativo{
+    opacity:1;
+    visibility:visible;
+}
+
+.lightbox img{
+    display:block;
+    width:auto;
+    height:auto;
+    max-width:92vw;
+    max-height:90vh;
+    object-fit:contain;
+
+    border:1px solid rgba(201,164,92,.4);
+
+    box-shadow:
+        0 25px 90px rgba(0,0,0,.8);
+}
+
+.lightbox-fechar{
+    position:absolute;
+    top:22px;
+    right:28px;
+    z-index:2;
+
+    width:52px;
+    height:52px;
+
+    display:grid;
+    place-items:center;
+
+    border:1px solid var(--dourado);
+    border-radius:50%;
+
+    background:rgba(5,5,5,.88);
+
+    color:var(--dourado-claro);
+
+    font-family:Arial,sans-serif;
+    font-size:30px;
+    line-height:1;
+
+    cursor:pointer;
+
+    transition:var(--transicao);
+}
+
+.lightbox-fechar:hover{
+    background:var(--dourado);
+    color:#000;
 }
 
 /* ==========================================
@@ -929,30 +1007,31 @@ ul{
 .animar{
     opacity:0;
     transform:translateY(28px);
-    transition:.7s
+    transition:.7s;
 }
 
 .animar.visivel{
     opacity:1;
-    transform:none
+    transform:none;
 }
 
 /* ==========================================
-   RESPONSIVO - TABLET
+   TABLET
 ========================================== */
 
 @media(max-width:1050px){
 
     #menu-principal{
-        display:none
+        display:none;
     }
 
     .menu-toggle{
-        display:block
+        display:block;
+        z-index:1002;
     }
 
     .btn-whatsapp{
-        display:none
+        display:none;
     }
 
     #menu-principal.aberto{
@@ -961,47 +1040,42 @@ ul{
         inset:0;
         place-items:center;
         background:rgba(5,5,5,.98);
-        z-index:1001
+        z-index:1001;
     }
 
     #menu-principal.aberto ul{
         flex-direction:column;
-        text-align:center
+        text-align:center;
     }
 
     #menu-principal.aberto a{
         font-family:"Cinzel",serif;
-        font-size:1.25rem
-    }
-
-    .menu-toggle{
-        z-index:1002
+        font-size:1.25rem;
     }
 
     .sobre{
-        grid-template-columns:1fr
+        grid-template-columns:1fr;
     }
 
     .cards-servicos-com-foto{
-        grid-template-columns:
-            repeat(2,1fr)
+        grid-template-columns:repeat(2,1fr);
     }
 
     .cards-depoimentos{
-        grid-template-columns:1fr
+        grid-template-columns:1fr;
     }
 
     .footer-conteudo{
-        grid-template-columns:1fr 1fr
+        grid-template-columns:1fr 1fr;
     }
 
     .grade-antes-depois{
-        grid-template-columns:1fr
+        grid-template-columns:1fr;
     }
 }
 
 /* ==========================================
-   RESPONSIVO - CELULAR
+   CELULAR
 ========================================== */
 
 @media(max-width:768px){
@@ -1010,176 +1084,215 @@ ul{
         min-height:74px;
         padding:0 20px;
         background:rgba(5,5,5,.84);
-        backdrop-filter:blur(14px)
+        backdrop-filter:blur(14px);
     }
 
     .hero{
         min-height:100svh;
         padding:110px 20px 54px;
-        align-items:flex-end
+        align-items:flex-end;
     }
 
+    /*
+       O VÍDEO VERTICAL DO CELULAR
+       PREENCHE A TELA SEM DEFORMAR.
+    */
+
     .hero-video-fundo video{
-        object-position:center center
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        object-position:center center;
     }
 
     .hero-overlay{
-        background:
-            linear-gradient(
-                180deg,
-                rgba(0,0,0,.18) 0%,
-                rgba(0,0,0,.42) 38%,
-                rgba(0,0,0,.94) 80%,
-                #050505 100%
-            )
+        background:linear-gradient(
+            180deg,
+            rgba(0,0,0,.18) 0%,
+            rgba(0,0,0,.42) 38%,
+            rgba(0,0,0,.94) 80%,
+            #050505 100%
+        );
     }
 
     .hero-brilho{
         left:-30%;
         top:10%;
         width:500px;
-        height:500px
+        height:500px;
     }
 
     .hero h1{
-        font-size:
-            clamp(
-                2.3rem,
-                12vw,
-                3.7rem
-            )
+        font-size:clamp(
+            2.3rem,
+            12vw,
+            3.7rem
+        );
     }
 
     .hero-descricao{
-        font-size:.92rem
+        font-size:.92rem;
     }
 
     .hero-botoes{
-        flex-direction:column
+        flex-direction:column;
     }
 
     .hero-btn{
         width:100%;
-        justify-content:center
+        justify-content:center;
     }
 
     .hero-destaques{
         display:grid;
         grid-template-columns:1fr;
         gap:12px;
-        margin-top:34px
+        margin-top:34px;
     }
 
     .hero-linha{
         height:1px;
         width:100%;
-        background:
-            linear-gradient(
-                90deg,
-                var(--borda),
-                transparent
-            )
+        background:linear-gradient(
+            90deg,
+            var(--borda),
+            transparent
+        );
     }
 
     .sobre,
     .portfolio,
     .antes-depois,
     .videos-galeria{
-        padding:90px 20px
+        padding:90px 20px;
     }
 
     .sobre-imagem img{
-        min-height:450px
+        min-height:450px;
     }
 
     .sobre-texto ul{
-        grid-template-columns:1fr
+        grid-template-columns:1fr;
     }
 
     .cards-servicos-com-foto{
-        grid-template-columns:1fr
+        grid-template-columns:1fr;
     }
 
     .card-servico-foto{
-        min-height:0
+        min-height:0;
     }
 
+    /*
+       FOTO DOS SERVIÇOS NO CELULAR
+       FICA AINDA MAIOR.
+    */
+
     .card-servico-foto img{
-        height:270px
+        height:460px;
+        object-fit:cover;
+        object-position:center top;
     }
 
     .galeria-automatica{
-        grid-template-columns:1fr
+        grid-template-columns:1fr;
     }
 
     .foto{
-        height:430px
+        height:460px;
     }
 
     .grade-videos{
-        grid-template-columns:1fr
+        grid-template-columns:1fr;
     }
 
     .comparacao{
-        grid-template-columns:1fr
+        grid-template-columns:1fr;
     }
 
     .comparacao>div{
-        min-height:360px
+        min-height:420px;
     }
 
     .comparacao>div+div{
         border-left:0;
-        border-top:1px solid var(--dourado)
+        border-top:1px solid var(--dourado);
     }
 
     .footer-conteudo{
-        grid-template-columns:1fr
+        grid-template-columns:1fr;
     }
 
     .botoes-flutuantes{
         right:14px;
-        bottom:14px
+        bottom:14px;
     }
 
     .botoes-flutuantes a{
         width:50px;
-        height:50px
+        height:50px;
+    }
+
+    .lightbox{
+        padding:15px;
+    }
+
+    .lightbox img{
+        max-width:96vw;
+        max-height:88vh;
+    }
+
+    .lightbox-fechar{
+        top:14px;
+        right:14px;
+        width:46px;
+        height:46px;
+        font-size:26px;
     }
 }
 
 /* ==========================================
-   RESPONSIVO - CELULARES PEQUENOS
+   CELULARES PEQUENOS
 ========================================== */
 
 @media(max-width:480px){
 
     .hero-video-fundo video{
-        object-position:50% 50%
+        object-position:50% 50%;
     }
 
     .hero h1{
-        font-size:2.15rem
+        font-size:2.15rem;
     }
 
     .hero-etiqueta{
         font-size:.58rem;
-        letter-spacing:.14em
+        letter-spacing:.14em;
     }
 
     .sobre-selo{
         right:-5px;
         width:105px;
-        height:105px
+        height:105px;
+    }
+
+    /*
+       Mantém o rosto e o cabelo maiores
+       mesmo em aparelhos pequenos.
+    */
+
+    .card-servico-foto img{
+        height:420px;
+        object-position:center top;
     }
 
     .foto{
-        height:390px
+        height:420px;
     }
 
     .video-card video{
         aspect-ratio:9/16;
-        object-fit:cover
+        object-fit:cover;
     }
 }
 
@@ -1190,13 +1303,13 @@ ul{
 @media(prefers-reduced-motion:reduce){
 
     html{
-        scroll-behavior:auto
+        scroll-behavior:auto;
     }
 
     *,
     *:before,
     *:after{
         animation:none!important;
-        transition:none!important
+        transition:none!important;
     }
 }
